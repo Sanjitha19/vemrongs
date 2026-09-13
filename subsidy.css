@@ -1623,48 +1623,76 @@ body {
     }
 
 }
-/* ===== FINAL FIX FOR SUBSIDY CARDS ON MOBILE ===== */
+/* =====================================================
+   MOBILE FIX — SHOW ALL SUBSIDY CARDS
+   ===================================================== */
 
 @media (max-width: 650px) {
 
+    html,
+    body {
+        width: 100%;
+        height: auto !important;
+        min-height: 100% !important;
+        overflow-x: hidden !important;
+        overflow-y: auto !important;
+    }
+
+    .subsidy-container {
+        width: 100% !important;
+        height: auto !important;
+        min-height: 0 !important;
+        overflow: visible !important;
+
+        display: flex !important;
+        flex-direction: column !important;
+    }
+
+    .left-column {
+        width: 100% !important;
+        height: auto !important;
+        min-height: 0 !important;
+        overflow: visible !important;
+    }
+
     .subsidy-left {
         width: 100% !important;
-        display: block !important;
         height: auto !important;
+        min-height: 0 !important;
         overflow: visible !important;
+
+        display: flex !important;
+        flex-direction: column !important;
     }
 
     .subsidy-cards {
-        display: flex !important;
-        flex-direction: column !important;
         width: 100% !important;
         height: auto !important;
+        min-height: 0 !important;
         max-height: none !important;
         overflow: visible !important;
+
+        display: flex !important;
+        flex-direction: column !important;
         gap: 14px !important;
-        margin: 0 !important;
-        padding: 0 !important;
     }
 
     .subsidy-card {
-        display: flex !important;
-        position: relative !important;
-
         width: 100% !important;
         height: 170px !important;
         min-height: 170px !important;
         max-height: none !important;
 
-        flex: none !important;
+        flex: 0 0 170px !important;
 
-        margin: 0 !important;
-        padding: 20px 15px !important;
-
+        display: flex !important;
         visibility: visible !important;
         opacity: 1 !important;
+
+        position: relative !important;
         overflow: visible !important;
 
-        transform: none !important;
+        margin: 0 !important;
     }
 
     .subsidy-card:nth-child(1),
@@ -1675,4 +1703,3 @@ body {
         opacity: 1 !important;
     }
 }
-
