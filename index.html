@@ -1462,7 +1462,29 @@
         </div>
 
     </div>
+<script>
+var configuration = {
+    widgetId: "36696d6d6852333035303438",
+    tokenAuth: "569497T1Ml7t54xwS6aa19371P1",
+    identifier: "",
+    exposeMethods: true,
 
+    captchaRenderId: "",
+
+    success: (data) => {
+        console.log("MSG91 success:", data);
+    },
+
+    failure: (error) => {
+        console.log("MSG91 error:", error);
+    }
+};
+</script>
+<script
+    type="text/javascript"
+    onload="initSendOTP(configuration)"
+    src="https://verify.msg91.com/otp-provider.js">
+</script>
 
 
     <script>
@@ -1522,37 +1544,70 @@ function getOTP() {
         return;
     }
 
-    // Show OTP section
-    otpSection.style.display = "block";
+    if (typeof sendOtp !== "function") {
+        alert("MSG91 OTP service has not loaded.");
+        console.log("sendOtp function is not available");
+        return;
+    }
 
-    // Temporary test OTP
-    otpMessage.textContent = "Test OTP: 123456";
-    otpMessage.style.color = "#234";
+    const identifier = "91" + phone;
 
-    alert("OTP sent successfully!");
+    console.log("Sending OTP to:", identifier);
+
+    sendOtp(
+        identifier,
+        function (data) {
+            console.log("OTP sent successfully:", data);
+
+            otpSection.style.display = "block";
+            otpMessage.textContent = "OTP sent successfully.";
+            otpMessage.style.color = "#234";
+        },
+        function (error) {
+            console.log("OTP sending failed:", error);
+
+            otpMessage.textContent = "Failed to send OTP.";
+            otpMessage.style.color = "red";
+        }
+    );
 }
-
-
 function verifyOTP() {
+
     const otp = document.getElementById("otp").value;
     const otpMessage = document.getElementById("otpMessage");
 
-    if (otp === "123456") {
-        otpMessage.textContent = "✓ Phone number verified successfully!";
-        otpMessage.style.color = "#1b8f3a";
-
-        document.getElementById("phone").disabled = true;
-        document.getElementById("getOtpBtn").disabled = true;
-        document.getElementById("otp").disabled = true;
-        document.getElementById("verifyOtpBtn").disabled = true;
-    } else {
-        otpMessage.textContent = "Invalid OTP. Please try again.";
+    if (otp.length !== 6) {
+        otpMessage.textContent = "Please enter the 6-digit OTP.";
         otpMessage.style.color = "red";
+        return;
     }
+
+    window.verifyOtp(
+        otp,
+
+        function (data) {
+            console.log("OTP verified:", data);
+
+            otpMessage.textContent =
+                "✓ Phone number verified successfully!";
+            otpMessage.style.color = "#1b8f3a";
+
+            document.getElementById("phone").disabled = true;
+            document.getElementById("getOtpBtn").disabled = true;
+            document.getElementById("otp").disabled = true;
+            document.getElementById("verifyOtpBtn").disabled = true;
+        },
+
+        function (error) {
+            console.log("Verification error:", error);
+
+            otpMessage.textContent =
+                "Invalid OTP. Please try again.";
+            otpMessage.style.color = "red";
+        }
+    );
 }
-
-    </script>
-
+</script>
 
 </body>
 
