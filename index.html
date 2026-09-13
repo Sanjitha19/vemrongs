@@ -1358,14 +1358,62 @@
 
             <!-- PHONE -->
 
-            <label for="phone">
-                Phone Number
-            </label>
+<label for="phone">
+    Phone Number
+</label>
 
-            <input
-                type="tel"
-                id="phone"
-                placeholder="Enter your phone number">
+<div class="phone-otp-row">
+
+    <input
+        type="tel"
+        id="phone"
+        placeholder="Enter your phone number"
+        maxlength="10"
+        inputmode="numeric">
+
+    <button
+        type="button"
+        id="getOtpBtn"
+        onclick="getOTP()">
+
+        Get OTP
+
+    </button>
+
+</div>
+
+
+<!-- OTP -->
+
+<div id="otpSection" style="display: none;">
+
+    <label for="otp">
+        Enter OTP
+    </label>
+
+    <div class="otp-row">
+
+        <input
+            type="text"
+            id="otp"
+            placeholder="Enter OTP"
+            maxlength="6"
+            inputmode="numeric">
+
+        <button
+            type="button"
+            id="verifyOtpBtn"
+            onclick="verifyOTP()">
+
+            Verify
+
+        </button>
+
+    </div>
+
+    <p id="otpMessage"></p>
+
+</div>
 
 
 
@@ -1460,6 +1508,48 @@
                         .slice(0, 6);
 
             });
+// =============================
+// OTP TEST FUNCTIONALITY
+// =============================
+
+function getOTP() {
+    const phone = document.getElementById("phone").value;
+    const otpSection = document.getElementById("otpSection");
+    const otpMessage = document.getElementById("otpMessage");
+
+    if (phone.length !== 10) {
+        alert("Please enter a valid 10-digit phone number.");
+        return;
+    }
+
+    // Show OTP section
+    otpSection.style.display = "block";
+
+    // Temporary test OTP
+    otpMessage.textContent = "Test OTP: 123456";
+    otpMessage.style.color = "#234";
+
+    alert("OTP sent successfully!");
+}
+
+
+function verifyOTP() {
+    const otp = document.getElementById("otp").value;
+    const otpMessage = document.getElementById("otpMessage");
+
+    if (otp === "123456") {
+        otpMessage.textContent = "✓ Phone number verified successfully!";
+        otpMessage.style.color = "#1b8f3a";
+
+        document.getElementById("phone").disabled = true;
+        document.getElementById("getOtpBtn").disabled = true;
+        document.getElementById("otp").disabled = true;
+        document.getElementById("verifyOtpBtn").disabled = true;
+    } else {
+        otpMessage.textContent = "Invalid OTP. Please try again.";
+        otpMessage.style.color = "red";
+    }
+}
 
     </script>
 
