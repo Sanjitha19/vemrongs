@@ -388,9 +388,11 @@
             scrolling="no"
             style="
                 width: 100%;
-                height: auto;
+                min-height: 3000px;
+                height: 3000px;
                 border: none;
                 display: block;
+                overflow: hidden;
             ">
         </iframe>
 
@@ -840,8 +842,10 @@
                     frame.contentWindow.document;
 
                 const height = Math.max(
+                    frameDocument.body.scrollHeight,
+                    frameDocument.body.offsetHeight,
                     frameDocument.documentElement.scrollHeight,
-                    frameDocument.body.scrollHeight
+                    frameDocument.documentElement.offsetHeight
                 );
 
                 frame.style.height = height + "px";
@@ -896,6 +900,14 @@
                             resizeIframe(frame);
                         },
                         2000
+                    );
+
+
+                    setTimeout(
+                        function() {
+                            resizeIframe(frame);
+                        },
+                        3000
                     );
 
 
@@ -1099,6 +1111,13 @@
                     resizeIframe(subsidyFrame);
 
                 }, 2000);
+
+
+                setTimeout(function() {
+
+                    resizeIframe(subsidyFrame);
+
+                }, 3000);
 
             }
 
@@ -1580,6 +1599,12 @@
         var configuration = {
 
             widgetId: "36696d6d6852333035303438",
+
+            /*
+             * IMPORTANT:
+             * Generate a NEW MSG91 Token Auth because
+             * the previous token was exposed.
+             */
             tokenAuth: "569497T1Ml7t54xwS6aa19371P1",
 
             identifier: "",
@@ -2026,3 +2051,4 @@
 </body>
 
 </html>
+
