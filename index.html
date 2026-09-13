@@ -1612,13 +1612,14 @@ function verifyOTP() {
     );
 }
 function submitConsultation() {
-            console.log("SUBMIT FUNCTION STARTED");
 
     const name = document.getElementById("name").value.trim();
     const email = document.getElementById("email").value.trim();
     const phone = document.getElementById("phone").value.trim();
+    const pincode = document.getElementById("pincode").value.trim();
+    const bill = document.getElementById("bill").value.trim();
 
-    if (!name || !email || !phone) {
+    if (!name || !email || !phone || !pincode || !bill) {
         alert("Please fill in all the details.");
         return;
     }
@@ -1630,24 +1631,48 @@ function submitConsultation() {
 
     const templateParams = {
         name: name,
-        email: email
+        email: email,
+        phone: phone,
+        pincode: pincode,
+        bill: bill
     };
 
+    // Customer confirmation email
     emailjs.send(
         "service_oonozha",
         "template_0b16cta",
         templateParams
     )
     .then(function(response) {
-        console.log("Email sent successfully:", response);
+
+        console.log("Customer email sent successfully:", response);
+
+        // Business notification email
+        return emailjs.send(
+            "service_oonozha",
+            "template_gp51hw6",
+            templateParams
+        );
+
+    })
+    .then(function(response) {
+
+        console.log("Business email sent successfully:", response);
+
         alert("Thank you! Your consultation request has been submitted successfully.");
+
         closeConsultation();
+
     })
     .catch(function(error) {
+
         console.error("Email sending failed:", error);
+
         alert("Unable to send your request. Please try again.");
+
     });
 }
+
 </script>
 
 </body>
