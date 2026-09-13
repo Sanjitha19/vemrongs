@@ -1,0 +1,1274 @@
+/* =========================================================
+   VERMON GRID SOLUTIONS
+   SOLAR SAVINGS CALCULATOR
+   ========================================================= */
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   PAGE
+   ========================================================= */
+
+html {
+    width: 100%;
+    min-width: 0;
+}
+
+body {
+    width: 100%;
+    min-width: 0;
+    min-height: 100vh;
+
+    margin: 0;
+    padding: 0;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    font-family:
+        "Segoe UI",
+        Inter,
+        Arial,
+        sans-serif;
+
+    color: #163b29;
+
+    background:
+        radial-gradient(
+            circle at 8% 10%,
+            rgba(255, 193, 7, 0.14),
+            transparent 28%
+        ),
+
+        radial-gradient(
+            circle at 92% 82%,
+            rgba(27, 170, 83, 0.12),
+            transparent 32%
+        ),
+
+        linear-gradient(
+            135deg,
+            #f7fff9,
+            #ffffff 50%,
+            #f1fff5
+        );
+}
+
+
+/* =========================================================
+   MAIN CONTAINER
+   ========================================================= */
+
+.calculator-container {
+    width: 100%;
+    max-width: 1120px;
+
+    margin: 0 auto;
+
+    padding:
+        35px
+        45px
+        28px;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.calculator-header {
+    width: 100%;
+
+    text-align: center;
+
+    margin-bottom: 32px;
+}
+
+
+/* =========================================================
+   SUN ICON
+   ========================================================= */
+
+.sun-icon {
+    width: 52px;
+    height: 52px;
+
+    margin:
+        0 auto 9px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    font-size: 27px;
+
+    background:
+        radial-gradient(
+            circle,
+            #fffbd6,
+            #ffe475,
+            #ffc107
+        );
+
+    box-shadow:
+        0 0 0 7px
+        rgba(255, 193, 7, 0.08),
+
+        0 0 30px
+        rgba(255, 193, 7, 0.20);
+}
+
+
+/* =========================================================
+   COMPANY NAME
+   ========================================================= */
+
+.eyebrow {
+    margin-bottom: 7px;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 2.5px;
+
+    color: #159447;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   HEADING
+   ========================================================= */
+
+.calculator-header h1 {
+    width: 100%;
+
+    margin:
+        0 0 10px;
+
+    font-size:
+        clamp(30px, 4.5vw, 50px);
+
+    line-height: 1.08;
+
+    font-weight: 850;
+
+    letter-spacing: -1.5px;
+
+    color: #0c6137;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   SUBTITLE
+   ========================================================= */
+
+.subtitle {
+    width: 100%;
+
+    max-width: 760px;
+
+    margin: 0 auto;
+
+    font-size:
+        clamp(11px, 1.25vw, 14px);
+
+    line-height: 1.5;
+
+    color: #70857a;
+}
+
+
+/* =========================================================
+   SLIDER CARD
+   ========================================================= */
+
+.input-section {
+    width: 100%;
+
+    min-width: 0;
+
+    padding:
+        28px
+        35px;
+
+    margin-bottom: 35px;
+
+    border:
+        1px solid
+        rgba(18, 126, 64, 0.13);
+
+    border-radius: 28px;
+
+    background:
+        rgba(255, 255, 255, 0.82);
+
+    box-shadow:
+        0 15px 40px
+        rgba(17, 108, 58, 0.06);
+}
+
+
+/* =========================================================
+   BILL HEADING
+   ========================================================= */
+
+.bill-heading {
+    width: 100%;
+    min-width: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+
+.bill-information {
+    min-width: 0;
+
+    flex: 1 1 auto;
+}
+
+
+/* =========================================================
+   BILL LABEL
+   ========================================================= */
+
+.input-label {
+    display: block;
+
+    font-size: 18px;
+
+    line-height: 1.3;
+
+    font-weight: 750;
+
+    color: #173d2a;
+}
+
+
+/* =========================================================
+   BILL DESCRIPTION
+   ========================================================= */
+
+.input-description {
+    display: block;
+
+    margin-top: 5px;
+
+    font-size: 12px;
+
+    line-height: 1.4;
+
+    color: #7a8e84;
+}
+
+
+/* =========================================================
+   BILL VALUE
+   ========================================================= */
+
+.bill-value {
+    flex:
+        0 0 auto;
+
+    font-size:
+        clamp(28px, 3.5vw, 42px);
+
+    line-height: 1;
+
+    font-weight: 850;
+
+    letter-spacing: -1px;
+
+    color: #119447;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   SLIDER WRAPPER
+   ========================================================= */
+
+.slider-wrapper {
+    width: 100%;
+    min-width: 0;
+
+    margin-top: 25px;
+}
+
+
+/* =========================================================
+   RANGE SLIDER
+   ========================================================= */
+
+#bill {
+    display: block;
+
+    width: 100%;
+    max-width: 100%;
+
+    height: 7px;
+
+    margin: 0;
+    padding: 0;
+
+    appearance: none;
+    -webkit-appearance: none;
+
+    border: none;
+    outline: none;
+
+    border-radius: 20px;
+
+    cursor: pointer;
+
+    background:
+        linear-gradient(
+            90deg,
+            #159447,
+            #70d493
+        );
+}
+
+
+/* =========================================================
+   CHROME / EDGE / SAFARI THUMB
+   ========================================================= */
+
+#bill::-webkit-slider-thumb {
+    appearance: none;
+    -webkit-appearance: none;
+
+    width: 25px;
+    height: 25px;
+
+    border-radius: 50%;
+
+    background: #ffffff;
+
+    border:
+        6px solid
+        #159447;
+
+    box-shadow:
+        0 3px 12px
+        rgba(0, 110, 55, 0.24);
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   FIREFOX THUMB
+   ========================================================= */
+
+#bill::-moz-range-thumb {
+    width: 19px;
+    height: 19px;
+
+    border-radius: 50%;
+
+    background: #ffffff;
+
+    border:
+        5px solid
+        #159447;
+
+    box-shadow:
+        0 3px 12px
+        rgba(0, 110, 55, 0.24);
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   RANGE LABELS
+   ========================================================= */
+
+.range-values {
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-top: 8px;
+
+    font-size: 11px;
+
+    line-height: 1;
+
+    color: #81948a;
+}
+
+
+/* =========================================================
+   RESULTS
+   ========================================================= */
+
+.results {
+    width: 100%;
+    min-width: 0;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    margin-bottom: 28px;
+}
+
+
+/* =========================================================
+   RESULT ITEM
+   ========================================================= */
+
+.result-item {
+    min-width: 0;
+
+    min-height: 82px;
+
+    padding:
+        7px 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    border-right:
+        1px solid
+        rgba(22, 130, 70, 0.13);
+
+    opacity: 1;
+    transform: none;
+}
+
+
+.result-item:last-child {
+    border-right: none;
+}
+
+
+/* =========================================================
+   RESULT CONTENT
+   ========================================================= */
+
+.result-content {
+    min-width: 0;
+
+    flex: 1 1 auto;
+}
+
+
+/* =========================================================
+   RESULT ICON
+   ========================================================= */
+
+.result-icon {
+    width: 44px;
+    height: 44px;
+
+    flex:
+        0 0 auto;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 13px;
+
+    font-size: 18px;
+
+    font-weight: 800;
+
+    color: #118644;
+
+    background:
+        linear-gradient(
+            135deg,
+            #eafff0,
+            #d9f7e4
+        );
+
+    box-shadow:
+        inset 0 0 0 1px
+        rgba(20, 150, 70, 0.08);
+}
+
+
+/* =========================================================
+   SOLAR ICON
+   ========================================================= */
+
+.result-icon.solar {
+    color: #d38b00;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff8d9,
+            #ffed9a
+        );
+}
+
+
+/* =========================================================
+   MONEY ICON
+   ========================================================= */
+
+.result-icon.money {
+    color: #0c8a45;
+}
+
+
+/* =========================================================
+   GROWTH ICON
+   ========================================================= */
+
+.result-icon.growth {
+    color: #087a3d;
+}
+
+
+/* =========================================================
+   RESULT NUMBER
+   ========================================================= */
+
+.result-number {
+    display: block;
+
+    min-width: 0;
+
+    font-size:
+        clamp(19px, 2.2vw, 30px);
+
+    line-height: 1.1;
+
+    font-weight: 850;
+
+    letter-spacing: -0.5px;
+
+    color: #123d29;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   RESULT TITLE
+   ========================================================= */
+
+.result-title {
+    display: block;
+
+    margin-top: 4px;
+
+    font-size:
+        clamp(8px, 0.85vw, 10.5px);
+
+    line-height: 1.35;
+
+    color: #788c82;
+}
+
+
+/* =========================================================
+   INFORMATION NOTE
+   ========================================================= */
+
+.calculator-note {
+    width: 100%;
+
+    max-width: 900px;
+
+    min-width: 0;
+
+    margin:
+        0 auto 17px;
+
+    padding:
+        11px 15px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    border-radius: 12px;
+
+    background:
+        rgba(227, 248, 235, 0.75);
+
+    border:
+        1px solid
+        rgba(30, 145, 70, 0.09);
+}
+
+
+/* =========================================================
+   NOTE ICON
+   ========================================================= */
+
+.note-icon {
+    width: 19px;
+    height: 19px;
+
+    flex:
+        0 0 auto;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    color: #ffffff;
+
+    background: #159447;
+
+    font-size: 11px;
+
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   INFO TEXT
+   ========================================================= */
+
+.calculator-note p {
+    min-width: 0;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+
+    color: #60786b;
+}
+
+
+/* =========================================================
+   BOTTOM MESSAGE
+   ========================================================= */
+
+.calculator-bottom {
+    width: 100%;
+
+    text-align: center;
+
+    line-height: 1.3;
+}
+
+
+.calculator-bottom p {
+    display: inline;
+
+    margin-right: 4px;
+
+    font-size: 12px;
+
+    color: #788c82;
+}
+
+
+.calculator-bottom strong {
+    display: inline;
+
+    font-size: 18px;
+
+    font-weight: 800;
+
+    color: #087b3d;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .calculator-container {
+        padding:
+            28px
+            24px
+            25px;
+    }
+
+
+    .input-section {
+        padding:
+            24px 25px;
+    }
+
+
+    .result-item {
+        padding:
+            7px 12px;
+
+        gap: 9px;
+    }
+
+
+    .result-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+
+    .result-number {
+        font-size: 20px;
+    }
+
+
+    .result-title {
+        font-size: 8.5px;
+    }
+
+
+    .calculator-note p {
+        font-size: 11px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   RESULTS BECOME VERTICAL
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .calculator-container {
+        width: 100%;
+
+        padding:
+            22px
+            15px
+            25px;
+    }
+
+
+    /* HEADER */
+
+    .calculator-header {
+        margin-bottom: 22px;
+    }
+
+
+    .sun-icon {
+        width: 45px;
+        height: 45px;
+
+        font-size: 23px;
+
+        margin-bottom: 7px;
+    }
+
+
+    .eyebrow {
+        font-size: 8.5px;
+
+        letter-spacing: 2px;
+    }
+
+
+    .calculator-header h1 {
+        font-size:
+            clamp(24px, 7vw, 32px);
+
+        letter-spacing: -1px;
+
+        margin-bottom: 7px;
+    }
+
+
+    .subtitle {
+        font-size: 10px;
+
+        padding: 0 5px;
+    }
+
+
+    /* SLIDER CARD */
+
+    .input-section {
+        width: 100%;
+
+        padding:
+            20px
+            16px;
+
+        margin-bottom: 22px;
+
+        border-radius: 20px;
+    }
+
+
+    .bill-heading {
+        gap: 12px;
+    }
+
+
+    .input-label {
+        font-size: 14px;
+    }
+
+
+    .input-description {
+        font-size: 9px;
+    }
+
+
+    .bill-value {
+        font-size: 25px;
+    }
+
+
+    .slider-wrapper {
+        margin-top: 19px;
+    }
+
+
+    #bill {
+        width: 100%;
+
+        height: 6px;
+    }
+
+
+    #bill::-webkit-slider-thumb {
+        width: 22px;
+        height: 22px;
+
+        border-width: 5px;
+    }
+
+
+    #bill::-moz-range-thumb {
+        width: 17px;
+        height: 17px;
+
+        border-width: 5px;
+    }
+
+
+    .range-values {
+        font-size: 8.5px;
+    }
+
+
+    /* RESULTS — VERTICAL */
+
+    .results {
+        width: 100%;
+
+        display: flex;
+
+        flex-direction: column;
+
+        margin-bottom: 17px;
+    }
+
+
+    .result-item {
+        width: 100%;
+
+        min-height: 65px;
+
+        padding:
+            8px
+            5px;
+
+        gap: 10px;
+
+        border-right: none;
+
+        border-bottom:
+            1px solid
+            rgba(22, 130, 70, 0.10);
+    }
+
+
+    .result-item:last-child {
+        border-bottom: none;
+    }
+
+
+    .result-icon {
+        width: 37px;
+        height: 37px;
+
+        border-radius: 10px;
+
+        font-size: 15px;
+    }
+
+
+    .result-number {
+        font-size: 21px;
+    }
+
+
+    .result-title {
+        font-size: 9px;
+
+        margin-top: 3px;
+    }
+
+
+    /* INFO BOX */
+
+    .calculator-note {
+        width: 100%;
+
+        padding:
+            9px 10px;
+
+        margin-bottom: 13px;
+
+        align-items: flex-start;
+    }
+
+
+    .note-icon {
+        width: 17px;
+        height: 17px;
+
+        font-size: 9px;
+    }
+
+
+    /* INCREASED INFO TEXT */
+
+    .calculator-note p {
+        font-size: 10px;
+
+        line-height: 1.45;
+    }
+
+
+    /* BOTTOM */
+
+    .calculator-bottom p {
+        font-size: 9px;
+    }
+
+
+    .calculator-bottom strong {
+        font-size: 13px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .calculator-container {
+        padding:
+            18px
+            11px
+            22px;
+    }
+
+
+    .calculator-header {
+        margin-bottom: 18px;
+    }
+
+
+    .sun-icon {
+        width: 40px;
+        height: 40px;
+
+        font-size: 20px;
+    }
+
+
+    .eyebrow {
+        font-size: 7.5px;
+
+        letter-spacing: 1.7px;
+    }
+
+
+    .calculator-header h1 {
+        font-size:
+            clamp(21px, 7.2vw, 28px);
+
+        letter-spacing: -0.7px;
+    }
+
+
+    .subtitle {
+        font-size: 8.5px;
+    }
+
+
+    /* CARD */
+
+    .input-section {
+        padding:
+            17px
+            13px;
+
+        border-radius: 18px;
+
+        margin-bottom: 18px;
+    }
+
+
+    .bill-heading {
+        gap: 8px;
+    }
+
+
+    .input-label {
+        font-size: 13px;
+    }
+
+
+    .input-description {
+        font-size: 8px;
+    }
+
+
+    .bill-value {
+        font-size: 23px;
+    }
+
+
+    .slider-wrapper {
+        margin-top: 17px;
+    }
+
+
+    #bill {
+        height: 5px;
+    }
+
+
+    #bill::-webkit-slider-thumb {
+        width: 20px;
+        height: 20px;
+
+        border-width: 5px;
+    }
+
+
+    .range-values {
+        font-size: 8px;
+    }
+
+
+    /* RESULTS */
+
+    .result-item {
+        min-height: 60px;
+
+        padding:
+            7px
+            3px;
+    }
+
+
+    .result-icon {
+        width: 34px;
+        height: 34px;
+
+        border-radius: 9px;
+
+        font-size: 14px;
+    }
+
+
+    .result-number {
+        font-size: 20px;
+    }
+
+
+    .result-title {
+        font-size: 8.5px;
+    }
+
+
+    /* INFO BOX */
+
+    .calculator-note {
+        padding:
+            8px
+            9px;
+    }
+
+
+    .calculator-note p {
+        font-size: 9px;
+
+        line-height: 1.45;
+    }
+
+
+    /* BOTTOM */
+
+    .calculator-bottom p {
+        font-size: 8.5px;
+    }
+
+
+    .calculator-bottom strong {
+        font-size: 12px;
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 360px) {
+
+    .calculator-container {
+        padding:
+            15px
+            9px
+            20px;
+    }
+
+
+    .calculator-header h1 {
+        font-size: 20px;
+    }
+
+
+    .subtitle {
+        font-size: 7.8px;
+    }
+
+
+    .input-section {
+        padding:
+            14px
+            10px;
+
+        border-radius: 16px;
+    }
+
+
+    .input-label {
+        font-size: 11.5px;
+    }
+
+
+    .input-description {
+        display: none;
+    }
+
+
+    .bill-value {
+        font-size: 20px;
+    }
+
+
+    .range-values {
+        font-size: 7px;
+    }
+
+
+    .result-item {
+        min-height: 56px;
+    }
+
+
+    .result-icon {
+        width: 31px;
+        height: 31px;
+
+        font-size: 12px;
+    }
+
+
+    .result-number {
+        font-size: 18px;
+    }
+
+
+    .result-title {
+        font-size: 7.5px;
+    }
+
+
+    /* INFO BOX */
+
+    .calculator-note {
+        padding:
+            7px
+            8px;
+
+        gap: 6px;
+    }
+
+
+    .note-icon {
+        width: 15px;
+        height: 15px;
+
+        font-size: 8px;
+    }
+
+
+    .calculator-note p {
+        font-size: 8px;
+
+        line-height: 1.4;
+    }
+
+
+    /* BOTTOM */
+
+    .calculator-bottom p {
+        font-size: 7.5px;
+    }
+
+
+    .calculator-bottom strong {
+        font-size: 10px;
+    }
+
+}

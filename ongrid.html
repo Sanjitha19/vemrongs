@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ON Grid Solar</title>
+    <link rel="stylesheet" href="ongrid.css">
+</head>
+
+<body>
+
+    <!-- HERO -->
+    <section class="grid-hero">
+
+        <div class="hero-content">
+            <span class="hero-tag">ON GRID SOLAR</span>
+
+            <h1>
+                Turn Sunlight Into
+                <span>Savings.</span>
+            </h1>
+
+            <p>
+                Generate your own electricity during the day,
+                use what you need, and send excess power back
+                to the grid.
+            </p>
+
+            <div class="hero-buttons">
+                <button onclick="parent.openConsultation()">
+                    Get Free Consultation
+                </button>
+
+                <button class="outline-btn"
+                        onclick="parent.openCalculator()">
+                    Calculate Savings
+                </button>
+            </div>
+        </div>
+
+
+        <!-- VISUAL ENERGY SYSTEM -->
+        <div class="energy-visual">
+
+            <div class="sun">
+                ☀
+            </div>
+
+            <div class="energy-line line-one"></div>
+
+            <div class="solar-panel">
+                <div class="panel-grid">
+                    <span></span><span></span><span></span>
+                    <span></span><span></span><span></span>
+                    <span></span><span></span><span></span>
+                </div>
+                <strong>Solar Panels</strong>
+            </div>
+
+            <div class="energy-line line-two"></div>
+
+            <div class="inverter">
+                <div class="inverter-icon">⚡</div>
+                <strong>Inverter</strong>
+                <small>DC → AC</small>
+            </div>
+
+            <div class="energy-branches">
+
+                <div class="energy-card home-card">
+                    <div class="card-icon">🏠</div>
+                    <strong>Your Home</strong>
+                    <small>Uses Solar Power</small>
+                </div>
+
+                <div class="energy-card grid-card">
+                    <div class="card-icon">⚡</div>
+                    <strong>Electric Grid</strong>
+                    <small>Receives Excess Power</small>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- HOW IT WORKS -->
+    <section class="how-section">
+
+        <div class="section-heading">
+            <span>HOW IT WORKS</span>
+            <h2>Your Roof Becomes Your Power Station</h2>
+            <p>
+                A simple flow from sunlight to electricity.
+            </p>
+        </div>
+
+
+        <div class="flow-container">
+
+            <div class="flow-step">
+                <div class="step-number">01</div>
+                <div class="big-icon">☀️</div>
+                <h3>Sunlight</h3>
+                <p>Solar panels capture sunlight.</p>
+            </div>
+
+            <div class="flow-arrow">→</div>
+
+            <div class="flow-step">
+                <div class="step-number">02</div>
+                <div class="big-icon">🔋</div>
+                <h3>Solar Energy</h3>
+                <p>Panels generate electrical energy.</p>
+            </div>
+
+            <div class="flow-arrow">→</div>
+
+            <div class="flow-step">
+                <div class="step-number">03</div>
+                <div class="big-icon">⚡</div>
+                <h3>Inverter</h3>
+                <p>Electricity is converted for use.</p>
+            </div>
+
+            <div class="flow-arrow">→</div>
+
+            <div class="flow-step">
+                <div class="step-number">04</div>
+                <div class="big-icon">🏠</div>
+                <h3>Your Home</h3>
+                <p>Your appliances use solar power.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- DAYTIME VISUAL -->
+    <section class="day-section">
+
+        <div class="day-visual">
+
+            <div class="sky-sun">☀️</div>
+
+            <div class="roof">
+                <div class="roof-panels">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+
+            <div class="house">
+                <div class="house-window"></div>
+                <div class="house-door"></div>
+            </div>
+
+            <div class="power-bubble">
+                <strong>Solar Power</strong>
+                <span>Used First</span>
+            </div>
+
+        </div>
+
+
+        <div class="day-content">
+
+            <span class="section-tag">DURING THE DAY</span>
+
+            <h2>
+                Use Solar Power
+                <span>First.</span>
+            </h2>
+
+            <p>
+                When sunlight is available, your solar system
+                generates electricity for your home or business.
+            </p>
+
+            <div class="mini-stats">
+
+                <div>
+                    <strong>☀️</strong>
+                    <span>Solar Generation</span>
+                </div>
+
+                <div>
+                    <strong>🏠</strong>
+                    <span>Power Your Appliances</span>
+                </div>
+
+                <div>
+                    <strong>📉</strong>
+                    <span>Lower Grid Usage</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- EXCESS POWER -->
+    <section class="excess-section">
+
+        <div class="excess-content">
+
+            <span class="section-tag">EXCESS ENERGY</span>
+
+            <h2>
+                Don't Waste
+                <span>Extra Power.</span>
+            </h2>
+
+            <p>
+                When your solar system produces more electricity
+                than you are using, the excess energy can flow
+                toward the electrical grid.
+            </p>
+
+            <div class="energy-badge">
+                <span>☀️</span>
+                <div>
+                    <strong>Solar Generated</strong>
+                    <small>More than current usage</small>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="grid-flow">
+
+            <div class="flow-circle solar-circle">
+                ☀️
+                <small>Solar</small>
+            </div>
+
+            <div class="flow-line"></div>
+
+            <div class="flow-circle home-circle">
+                🏠
+                <small>Home</small>
+            </div>
+
+            <div class="flow-line"></div>
+
+            <div class="flow-circle grid-circle">
+                ⚡
+                <small>Grid</small>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- BENEFITS -->
+    <section class="benefits-section">
+
+        <div class="section-heading">
+            <span>WHY ON GRID?</span>
+            <h2>More Sun. Less Electricity Cost.</h2>
+            <p>
+                Designed for homes, businesses and properties
+                with reliable grid connectivity.
+            </p>
+        </div>
+
+
+        <div class="benefit-grid">
+
+            <div class="benefit-card">
+                <div class="benefit-icon">💰</div>
+                <h3>Lower Electricity Bills</h3>
+                <p>
+                    Generate part of your electricity instead
+                    of buying all of it from the grid.
+                </p>
+            </div>
+
+            <div class="benefit-card">
+                <div class="benefit-icon">☀️</div>
+                <h3>Use Clean Energy</h3>
+                <p>
+                    Make better use of the sunlight available
+                    on your property.
+                </p>
+            </div>
+
+            <div class="benefit-card">
+                <div class="benefit-icon">🏢</div>
+                <h3>Flexible Applications</h3>
+                <p>
+                    Suitable for homes, offices, shops and
+                    larger commercial properties.
+                </p>
+            </div>
+
+            <div class="benefit-card">
+                <div class="benefit-icon">📈</div>
+                <h3>Long-Term Value</h3>
+                <p>
+                    A solar installation can help reduce
+                    electricity expenses over the long term.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- BEST FOR -->
+    <section class="best-section">
+
+        <div class="best-title">
+            <span>IS ON GRID RIGHT FOR YOU?</span>
+            <h2>Perfect When You Have Reliable Grid Access</h2>
+        </div>
+
+
+        <div class="best-grid">
+
+            <div class="best-card">
+                <div class="best-number">01</div>
+                <div>
+                    <h3>Homes</h3>
+                    <p>Reduce daytime electricity consumption from the grid.</p>
+                </div>
+            </div>
+
+            <div class="best-card">
+                <div class="best-number">02</div>
+                <div>
+                    <h3>Offices</h3>
+                    <p>Match solar generation with daytime energy usage.</p>
+                </div>
+            </div>
+
+            <div class="best-card">
+                <div class="best-number">03</div>
+                <div>
+                    <h3>Shops</h3>
+                    <p>Use your rooftop to generate useful electricity.</p>
+                </div>
+            </div>
+
+            <div class="best-card">
+                <div class="best-number">04</div>
+                <div>
+                    <h3>Businesses</h3>
+                    <p>Offset a portion of regular electricity consumption.</p>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SIMPLE COMPARISON -->
+    <section class="comparison-section">
+
+        <div class="section-heading">
+            <span>MAKE THE SWITCH</span>
+            <h2>Electricity Before vs Solar</h2>
+        </div>
+
+
+        <div class="comparison-box">
+
+            <div class="compare-side">
+
+                <div class="compare-icon">⚡</div>
+
+                <h3>Traditional Power</h3>
+
+                <div class="compare-item">
+                    <span>✕</span>
+                    <p>Depend mainly on grid electricity</p>
+                </div>
+
+                <div class="compare-item">
+                    <span>✕</span>
+                    <p>Pay for electricity consumed</p>
+                </div>
+
+                <div class="compare-item">
+                    <span>✕</span>
+                    <p>No rooftop generation</p>
+                </div>
+
+            </div>
+
+
+            <div class="vs">
+                VS
+            </div>
+
+
+            <div class="compare-side solar-side">
+
+                <div class="compare-icon">☀️</div>
+
+                <h3>ON Grid Solar</h3>
+
+                <div class="compare-item">
+                    <span>✓</span>
+                    <p>Generate electricity from sunlight</p>
+                </div>
+
+                <div class="compare-item">
+                    <span>✓</span>
+                    <p>Reduce grid electricity usage</p>
+                </div>
+
+                <div class="compare-item">
+                    <span>✓</span>
+                    <p>Send excess energy toward the grid</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CTA -->
+    <section class="final-cta">
+
+        <div>
+            <span>READY TO GO SOLAR?</span>
+
+            <h2>
+                Let Your Roof
+                <span>Work For You.</span>
+            </h2>
+
+            <p>
+                Find out what an ON Grid solar system could look
+                like for your property.
+            </p>
+        </div>
+
+        <div class="cta-buttons">
+
+            <button onclick="parent.openConsultation()">
+                Get Free Consultation
+            </button>
+
+            <button class="cta-outline"
+                    onclick="parent.openCalculator()">
+                Check Solar Savings
+            </button>
+
+        </div>
+
+    </section>
+
+
+</body>
+</html>

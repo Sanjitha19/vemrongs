@@ -1,0 +1,523 @@
+/* =========================
+   GENERAL
+   ========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+/* =========================
+   HERO
+   ========================= */
+
+.homes-hero {
+    width: 100%;
+    max-width: 1400px;
+    margin: auto;
+    padding: 55px 6%;
+
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+
+    gap: 55px;
+    align-items: center;
+}
+
+
+.homes-image {
+    height: 470px;
+
+    overflow: hidden;
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 15px 45px rgba(0, 60, 120, 0.18);
+}
+
+
+.homes-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition: transform 0.6s ease;
+}
+
+
+.homes-image:hover img {
+    transform: scale(1.04);
+}
+
+
+.homes-content {
+    padding: 20px;
+}
+
+
+.tag {
+    color: #1261b5;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+
+.homes-content h1 {
+    font-size: 50px;
+
+    line-height: 1.1;
+
+    margin: 18px 0;
+
+    color: #123b65;
+}
+
+
+.homes-content h1 span {
+    color: #1261b5;
+}
+
+
+.homes-content > p {
+    font-size: 18px;
+
+    line-height: 1.7;
+
+    color: #5d7083;
+
+    max-width: 600px;
+}
+
+
+/* BUTTONS */
+
+.buttons {
+    display: flex;
+
+    gap: 15px;
+
+    margin-top: 30px;
+
+    flex-wrap: wrap;
+}
+
+
+button {
+    border: none;
+
+    padding: 14px 25px;
+
+    border-radius: 8px;
+
+    background: #1261b5;
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+button:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 8px 20px rgba(18, 97, 181, 0.25);
+}
+
+
+button.outline {
+    background: transparent;
+
+    color: #1261b5;
+
+    border: 2px solid #1261b5;
+}
+
+
+/* =========================
+   SECTION HEADING
+   ========================= */
+
+.section-heading {
+    text-align: center;
+
+    max-width: 800px;
+
+    margin: auto;
+
+    padding: 0 20px;
+}
+
+
+.section-heading span {
+    color: #1261b5;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+
+.section-heading h2 {
+    font-size: 36px;
+
+    margin: 12px 0;
+
+    color: #123b65;
+}
+
+
+.section-heading p {
+    color: #637587;
+
+    font-size: 17px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================
+   WHY SOLAR
+   ========================= */
+
+.why-solar {
+    padding: 50px 25px 80px;
+}
+
+
+.benefits {
+    max-width: 1250px;
+
+    margin: 45px auto 0;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+
+.benefit-card {
+    background: white;
+
+    padding: 30px 25px;
+
+    border-radius: 16px;
+
+    text-align: center;
+
+    box-shadow:
+        0 8px 30px rgba(0, 60, 120, 0.08);
+
+    transition: 0.3s;
+}
+
+
+.benefit-card:hover {
+    transform: translateY(-7px);
+}
+
+
+.icon {
+    font-size: 38px;
+
+    margin-bottom: 15px;
+}
+
+
+.benefit-card h3 {
+    color: #123b65;
+
+    margin-bottom: 10px;
+}
+
+
+.benefit-card p {
+    color: #68798a;
+
+    line-height: 1.6;
+}
+
+
+/* =========================
+   SUBSIDY
+   ========================= */
+
+.subsidy-section {
+    width: 100%;
+    max-width: 1300px;
+
+    margin: auto;
+
+    padding: 30px;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr) minmax(0, 1fr);
+
+    gap: 50px;
+
+    align-items: center;
+}
+
+
+.subsidy-image {
+    height: 430px;
+
+    overflow: hidden;
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 15px 40px rgba(0, 60, 120, 0.15);
+}
+
+
+.subsidy-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: right center;
+}
+
+
+.subsidy-content h2 {
+    font-size: 36px;
+
+    line-height: 1.25;
+
+    color: #123b65;
+
+    margin: 15px 0;
+}
+
+
+.subsidy-content > p {
+    color: #617184;
+
+    font-size: 17px;
+
+    line-height: 1.7;
+}
+
+
+.subsidy-box {
+    margin: 25px 0;
+
+    padding: 20px;
+
+    background: #eaf5ff;
+
+    border-left: 5px solid #1261b5;
+
+    border-radius: 8px;
+}
+
+
+.subsidy-box strong {
+    color: #124b91;
+
+    font-size: 17px;
+}
+
+
+.subsidy-box p {
+    color: #617184;
+
+    line-height: 1.6;
+
+    margin-bottom: 0;
+}
+
+
+/* =========================
+   PROCESS
+   ========================= */
+
+.process-section {
+    max-width: 1300px;
+
+    margin: 80px auto;
+
+    padding: 0 30px;
+}
+
+
+.process {
+    margin-top: 45px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+
+.process-card {
+    background: white;
+
+    padding: 28px;
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 7px 25px rgba(0, 60, 120, 0.07);
+}
+
+
+.number {
+    font-size: 28px;
+
+    font-weight: 800;
+
+    color: #1261b5;
+
+    margin-bottom: 15px;
+}
+
+
+.process-card h3 {
+    color: #123b65;
+}
+
+
+.process-card p {
+    color: #68798a;
+
+    line-height: 1.6;
+}
+
+
+/* =========================
+   FINAL CTA
+   ========================= */
+
+.final-cta {
+    max-width: 1200px;
+
+    margin: 0 auto 60px;
+
+    padding: 55px 30px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #eaf5ff,
+            #f7fbff
+        );
+
+    border-radius: 25px;
+}
+
+
+.final-cta h2 {
+    font-size: 38px;
+
+    margin-bottom: 10px;
+
+    color: #123b65;
+}
+
+
+.final-cta p {
+    color: #617184;
+
+    font-size: 17px;
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+@media (max-width: 1000px) {
+
+    .homes-hero {
+        grid-template-columns: 1fr;
+    }
+
+    .benefits {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .subsidy-section {
+        grid-template-columns: 1fr;
+    }
+
+    .process {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .homes-hero {
+        padding: 30px 20px;
+    }
+
+    .homes-image {
+        height: 300px;
+    }
+
+    .homes-content h1 {
+        font-size: 38px;
+    }
+
+    .benefits {
+        grid-template-columns: 1fr;
+    }
+
+    .process {
+        grid-template-columns: 1fr;
+    }
+
+    .subsidy-image {
+        height: 300px;
+    }
+
+    .subsidy-content h2 {
+        font-size: 30px;
+    }
+
+    .final-cta h2 {
+        font-size: 30px;
+    }
+
+}

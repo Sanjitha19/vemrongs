@@ -1,0 +1,832 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+    overflow-y: visible;
+    background: #f6f8f7;
+    color: #17221d;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hybrid-hero {
+    width: 100%;
+    max-width: 1400px;
+    margin: auto;
+    padding: 65px 6%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.hero-tag,
+.section-heading span,
+.day-night-content > span,
+.best-content > span,
+.final-cta span {
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #27945b;
+}
+
+.hero-content h1 {
+    font-size: clamp(42px, 5vw, 70px);
+    line-height: 1.02;
+    margin: 18px 0;
+    letter-spacing: -2px;
+}
+
+.hero-content h1 span {
+    color: #27945b;
+}
+
+.hero-content p {
+    max-width: 600px;
+    font-size: 18px;
+    line-height: 1.7;
+    color: #657169;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.hero-buttons button,
+.decision-box button,
+.final-cta button {
+    border: none;
+    padding: 15px 25px;
+    border-radius: 10px;
+    background: #27945b;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.outline-btn {
+    background: transparent !important;
+    color: #27945b !important;
+    border: 1px solid #27945b !important;
+}
+
+
+/* =========================
+   HYBRID VISUAL
+========================= */
+
+.hybrid-visual {
+    min-height: 540px;
+    border-radius: 35px;
+    background: linear-gradient(145deg, #e9f8ee, #ffffff);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+}
+
+.sun {
+    position: absolute;
+    top: 55px;
+    left: 70px;
+    font-size: 55px;
+}
+
+.energy-line {
+    position: absolute;
+    width: 80px;
+    height: 3px;
+    background: #6bc48c;
+}
+
+.line-one {
+    top: 170px;
+    left: 130px;
+    transform: rotate(25deg);
+}
+
+.line-two {
+    top: 250px;
+    left: 50%;
+    transform: rotate(90deg);
+}
+
+.solar-box {
+    position: absolute;
+    top: 130px;
+    left: 50px;
+    padding: 20px;
+    border-radius: 18px;
+    background: #1e6841;
+    color: white;
+    text-align: center;
+}
+
+.panel-row {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 10px;
+}
+
+.panel-row span {
+    width: 28px;
+    height: 35px;
+    display: block;
+    border: 2px solid #b9e9ca;
+    transform: skew(-15deg);
+}
+
+.solar-box strong {
+    font-size: 14px;
+}
+
+.hybrid-inverter {
+    width: 150px;
+    height: 170px;
+    border-radius: 25px;
+    background: white;
+    border: 3px solid #27945b;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+}
+
+.inverter-icon {
+    font-size: 40px;
+    margin-bottom: 12px;
+}
+
+.energy-options {
+    position: absolute;
+    bottom: 45px;
+    width: 90%;
+    display: flex;
+    justify-content: space-around;
+    gap: 15px;
+}
+
+.energy-card {
+    background: white;
+    width: 145px;
+    padding: 17px 10px;
+    text-align: center;
+    border-radius: 18px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.07);
+}
+
+.energy-card span {
+    display: block;
+    font-size: 30px;
+    margin-bottom: 8px;
+}
+
+.energy-card strong {
+    display: block;
+    font-size: 14px;
+}
+
+.energy-card small {
+    color: #7b857e;
+    display: block;
+    margin-top: 5px;
+}
+
+
+/* =========================
+   SECTION HEADING
+========================= */
+
+.section-heading {
+    text-align: center;
+    max-width: 750px;
+    margin: auto;
+}
+
+.section-heading h2 {
+    font-size: 42px;
+    margin: 12px 0;
+}
+
+.section-heading h2 strong {
+    color: #27945b;
+}
+
+.section-heading p {
+    color: #6d776f;
+    line-height: 1.7;
+}
+
+
+/* =========================
+   PRIORITY
+========================= */
+
+.priority-section {
+    background: white;
+    padding: 85px 6%;
+}
+
+.priority-flow {
+    max-width: 1150px;
+    margin: 55px auto 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.priority-card {
+    width: 300px;
+    min-height: 270px;
+    padding: 30px;
+    border-radius: 25px;
+    position: relative;
+    background: #f5faf6;
+    border: 1px solid #e1ebe4;
+}
+
+.priority-card .number {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #91a097;
+}
+
+.big-icon {
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+
+.priority-card h3 {
+    font-size: 22px;
+    margin: 10px 0;
+}
+
+.priority-card p {
+    color: #68736c;
+    line-height: 1.6;
+}
+
+.flow-arrow {
+    font-size: 35px;
+    color: #27945b;
+}
+
+
+/* =========================
+   DAY NIGHT
+========================= */
+
+.day-night-section {
+    max-width: 1400px;
+    margin: auto;
+    padding: 90px 6%;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 70px;
+    align-items: center;
+}
+
+.day-night-content h2 {
+    font-size: 45px;
+    line-height: 1.15;
+    margin: 15px 0;
+}
+
+.day-night-content h2 strong {
+    color: #27945b;
+}
+
+.day-night-content > p {
+    color: #6d776f;
+    line-height: 1.7;
+}
+
+.timeline {
+    margin-top: 35px;
+}
+
+.timeline-item {
+    display: flex;
+    gap: 18px;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.circle {
+    width: 52px;
+    height: 52px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: #e7f6eb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 23px;
+}
+
+.timeline-item h3 {
+    margin: 0 0 5px;
+}
+
+.timeline-item p {
+    margin: 0;
+    color: #707a73;
+}
+
+
+/* BATTERY */
+
+.battery-display {
+    min-height: 500px;
+    border-radius: 35px;
+    background: #17221d;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.battery-shell {
+    width: 170px;
+    height: 300px;
+    border: 7px solid #a9cdb4;
+    border-radius: 25px;
+    position: relative;
+    padding: 12px;
+}
+
+.battery-top {
+    position: absolute;
+    width: 65px;
+    height: 14px;
+    background: #a9cdb4;
+    top: -20px;
+    left: 45px;
+    border-radius: 5px 5px 0 0;
+}
+
+.battery-level {
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+    right: 12px;
+    height: 72%;
+    border-radius: 12px;
+    background: #45ae70;
+}
+
+.battery-text {
+    position: absolute;
+    text-align: center;
+    color: white;
+}
+
+.battery-text strong {
+    display: block;
+    font-size: 40px;
+}
+
+.battery-text span {
+    font-size: 13px;
+    color: #b7c5bc;
+}
+
+.power-orbit {
+    position: absolute;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background: #27372e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+}
+
+.orbit-one {
+    top: 70px;
+    left: 80px;
+}
+
+.orbit-two {
+    top: 100px;
+    right: 80px;
+}
+
+.orbit-three {
+    bottom: 75px;
+    right: 70px;
+}
+
+
+/* =========================
+   BENEFITS
+========================= */
+
+.benefits-section {
+    padding: 90px 6%;
+    background: white;
+}
+
+.benefit-grid {
+    max-width: 1150px;
+    margin: 50px auto 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.benefit-card {
+    padding: 30px;
+    border-radius: 22px;
+    background: #f6f9f7;
+    transition: 0.3s;
+}
+
+.benefit-card:hover {
+    transform: translateY(-7px);
+}
+
+.benefit-icon {
+    font-size: 35px;
+}
+
+.benefit-card h3 {
+    margin: 18px 0 10px;
+}
+
+.benefit-card p {
+    color: #6e7972;
+    line-height: 1.6;
+}
+
+
+/* =========================
+   COMPONENTS
+========================= */
+
+.components-section {
+    padding: 90px 6%;
+}
+
+.component-layout {
+    max-width: 1150px;
+    margin: 60px auto 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+    align-items: center;
+}
+
+.component-main {
+    height: 500px;
+    position: relative;
+}
+
+.central-circle {
+    width: 190px;
+    height: 190px;
+    border-radius: 50%;
+    background: #27945b;
+    color: white;
+    position: absolute;
+    top: 150px;
+    left: calc(50% - 95px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    box-shadow: 0 15px 35px rgba(39, 148, 91, 0.3);
+}
+
+.central-circle span {
+    font-size: 38px;
+}
+
+.central-circle strong {
+    font-size: 18px;
+    margin-top: 5px;
+}
+
+.central-circle small {
+    margin-top: 4px;
+    opacity: 0.8;
+}
+
+.component {
+    position: absolute;
+    width: 145px;
+    padding: 18px;
+    border-radius: 18px;
+    background: white;
+    box-shadow: 0 10px 30px rgba(0,0,0,.08);
+    text-align: center;
+    border: 1px solid #e2ebe5;
+}
+
+.component span {
+    display: block;
+    font-size: 30px;
+    margin-bottom: 8px;
+}
+
+.solar-component {
+    top: 20px;
+    left: calc(50% - 72px);
+}
+
+.battery-component {
+    bottom: 30px;
+    left: 10px;
+}
+
+.grid-component {
+    bottom: 30px;
+    right: 10px;
+}
+
+.home-component {
+    top: 220px;
+    right: -15px;
+}
+
+.component-text > div {
+    margin-bottom: 28px;
+}
+
+.component-text h3 {
+    margin-bottom: 7px;
+}
+
+.component-text p {
+    color: #6e7972;
+    margin: 0;
+    line-height: 1.6;
+}
+
+
+/* =========================
+   BEST SECTION
+========================= */
+
+.best-section {
+    padding: 90px 6%;
+    background: #eaf6ee;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 70px;
+    align-items: center;
+}
+
+.best-content h2 {
+    font-size: 45px;
+    line-height: 1.15;
+    max-width: 650px;
+}
+
+.best-content h2 strong {
+    color: #27945b;
+}
+
+.best-list {
+    margin-top: 30px;
+}
+
+.best-list div {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 18px 0;
+}
+
+.best-list span {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #27945b;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.best-list p {
+    margin: 0;
+    color: #536058;
+}
+
+.decision-box {
+    background: white;
+    border-radius: 30px;
+    padding: 40px;
+    text-align: center;
+    box-shadow: 0 15px 40px rgba(0,0,0,.08);
+}
+
+.decision-icon {
+    font-size: 50px;
+}
+
+.decision-box h3 {
+    font-size: 27px;
+}
+
+.decision-box p {
+    color: #6e7972;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+
+/* =========================
+   FINAL CTA
+========================= */
+
+.final-cta {
+    max-width: 1300px;
+    margin: 70px auto;
+    padding: 55px 6%;
+    border-radius: 30px;
+    background: #17221d;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+
+.final-cta h2 {
+    font-size: 42px;
+    margin: 12px 0;
+}
+
+.final-cta h2 strong {
+    color: #63c988;
+}
+
+.final-cta p {
+    color: #bdc8c0;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1050px) {
+
+    .hybrid-hero,
+    .day-night-section,
+    .best-section,
+    .component-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .benefit-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hybrid-visual {
+        min-height: 500px;
+    }
+
+    .final-cta {
+        margin: 50px 20px;
+    }
+}
+
+
+@media (max-width: 750px) {
+
+    .hybrid-hero {
+        padding: 45px 5%;
+    }
+
+    .hero-content h1 {
+        font-size: 45px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .hybrid-visual {
+        min-height: 480px;
+    }
+
+    .solar-box {
+        left: 25px;
+    }
+
+    .energy-options {
+        width: 95%;
+    }
+
+    .energy-card {
+        width: 105px;
+        padding: 12px 5px;
+    }
+
+    .energy-card span {
+        font-size: 24px;
+    }
+
+    .priority-flow {
+        flex-direction: column;
+    }
+
+    .flow-arrow {
+        transform: rotate(90deg);
+    }
+
+    .priority-card {
+        width: 100%;
+        max-width: 350px;
+    }
+
+    .section-heading h2,
+    .day-night-content h2,
+    .best-content h2,
+    .final-cta h2 {
+        font-size: 34px;
+    }
+
+    .benefit-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .component-main {
+        transform: scale(0.85);
+        margin-left: -30px;
+    }
+
+    .final-cta {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+
+@media (max-width: 500px) {
+
+    .hybrid-visual {
+        min-height: 430px;
+    }
+
+    .sun {
+        left: 25px;
+        top: 35px;
+        font-size: 40px;
+    }
+
+    .solar-box {
+        top: 100px;
+        left: 20px;
+        transform: scale(0.8);
+        transform-origin: left top;
+    }
+
+    .hybrid-inverter {
+        width: 125px;
+        height: 145px;
+    }
+
+    .energy-options {
+        bottom: 25px;
+    }
+
+    .energy-card {
+        width: 90px;
+    }
+
+    .energy-card small {
+        font-size: 10px;
+    }
+
+    .battery-display {
+        min-height: 430px;
+    }
+}
