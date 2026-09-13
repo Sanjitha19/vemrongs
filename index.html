@@ -11,11 +11,11 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
-<script>
-    emailjs.init({
-        publicKey: "9ePHTbW7ITYC8yPJ7"
-    });
-</script>
+    <script>
+        emailjs.init({
+            publicKey: "9ePHTbW7ITYC8yPJ7"
+        });
+    </script>
 
 </head>
 
@@ -29,24 +29,13 @@
 
     <header>
 
-        <!-- LOGO -->
-
         <img src="Webpage.png" alt="Vermon Grid Solutions">
 
-
-        <!-- NAVIGATION -->
-
         <nav>
-
-
-            <!-- HOME -->
 
             <a href="#" onclick="openHome(); return false;">
                 Home
             </a>
-
-
-            <!-- SOLUTIONS -->
 
             <div class="dropdown">
 
@@ -54,7 +43,6 @@
                     Solutions
                     <span class="arrow"></span>
                 </a>
-
 
                 <div class="dropdown-menu">
 
@@ -79,15 +67,12 @@
             </div>
 
 
-            <!-- SERVICES -->
-
             <div class="dropdown">
 
                 <a href="#">
                     Services
                     <span class="arrow"></span>
                 </a>
-
 
                 <div class="dropdown-menu">
 
@@ -108,14 +93,10 @@
             </div>
 
 
-            <!-- ABOUT US -->
-
             <a href="#">
                 About Us
             </a>
 
-
-            <!-- MORE -->
 
             <div class="dropdown">
 
@@ -123,7 +104,6 @@
                     More
                     <span class="arrow"></span>
                 </a>
-
 
                 <div class="dropdown-menu">
 
@@ -142,8 +122,6 @@
             </div>
 
 
-            <!-- CONTACT -->
-
             <a href="#"
                onclick="openConsultation(); return false;">
                 Contact
@@ -161,13 +139,10 @@
 
     <section class="slider" id="homePage">
 
-
         <div class="slides" id="slides">
 
 
-            <!-- =========================
-                 SLIDE 1
-                 ========================= -->
+            <!-- SLIDE 1 -->
 
             <div class="slide">
 
@@ -194,10 +169,7 @@
             </div>
 
 
-
-            <!-- =========================
-                 SLIDE 2
-                 ========================= -->
+            <!-- SLIDE 2 -->
 
             <div class="slide">
 
@@ -224,10 +196,7 @@
             </div>
 
 
-
-            <!-- =========================
-                 SLIDE 3
-                 ========================= -->
+            <!-- SLIDE 3 -->
 
             <div class="slide">
 
@@ -254,10 +223,7 @@
             </div>
 
 
-
-            <!-- =========================
-                 SLIDE 4
-                 ========================= -->
+            <!-- SLIDE 4 -->
 
             <div class="slide">
 
@@ -267,10 +233,7 @@
             </div>
 
 
-
-            <!-- =========================
-                 SLIDE 5
-                 ========================= -->
+            <!-- SLIDE 5 -->
 
             <div class="slide">
 
@@ -297,10 +260,7 @@
             </div>
 
 
-
-            <!-- =========================
-                 SLIDE 6
-                 ========================= -->
+            <!-- SLIDE 6 -->
 
             <div class="slide">
 
@@ -327,11 +287,7 @@
             </div>
 
 
-
-            <!-- =========================
-                 DUPLICATE FIRST SLIDE
-                 FOR LOOPING
-                 ========================= -->
+            <!-- DUPLICATE FIRST SLIDE -->
 
             <div class="slide">
 
@@ -360,10 +316,7 @@
         </div>
 
 
-
-        <!-- =========================
-             SLIDER DOTS
-             ========================= -->
+        <!-- SLIDER DOTS -->
 
         <div class="slider-dots">
 
@@ -405,11 +358,13 @@
          style="display: none;">
 
         <iframe
+            id="calculatorFrame"
             src="calculator.html"
             title="Solar Calculator"
+            scrolling="no"
             style="
                 width: 100%;
-                height: 850px;
+                height: auto;
                 border: none;
                 display: block;
             ">
@@ -433,7 +388,7 @@
             scrolling="no"
             style="
                 width: 100%;
-                height: 3000px;
+                height: auto;
                 border: none;
                 display: block;
             ">
@@ -620,7 +575,6 @@
             document.querySelectorAll(".dot");
 
 
-
         function showSlide(index) {
 
             currentSlide = index;
@@ -633,7 +587,6 @@
             updateDots();
 
         }
-
 
 
         function updateDots() {
@@ -651,7 +604,6 @@
             });
 
         }
-
 
 
         /* =========================
@@ -689,7 +641,6 @@
             updateDots();
 
         }
-
 
 
         /* =========================
@@ -747,14 +698,12 @@
         }
 
 
-
         /* =========================
            AUTO SLIDE
            ========================= */
 
         let autoSlide =
             setInterval(nextSlide, 4000);
-
 
 
         function startAutoSlide() {
@@ -765,7 +714,6 @@
                 setInterval(nextSlide, 4000);
 
         }
-
 
 
         /* =========================
@@ -787,7 +735,6 @@
         });
 
 
-
         /* =========================
            CONSULTATION MODAL
            ========================= */
@@ -801,7 +748,6 @@
         }
 
 
-
         function closeConsultation() {
 
             document.getElementById(
@@ -809,7 +755,6 @@
             ).style.display = "none";
 
         }
-
 
 
         /* =========================
@@ -845,7 +790,6 @@
         );
 
 
-
         /* =========================
            HEADER HEIGHT
            ========================= */
@@ -868,12 +812,10 @@
         }
 
 
-
         window.addEventListener(
             "load",
             setHeaderHeight
         );
-
 
 
         window.addEventListener(
@@ -881,6 +823,154 @@
             setHeaderHeight
         );
 
+
+        /* =========================
+           AUTOMATIC IFRAME HEIGHT
+           CALCULATOR + SUBSIDY
+           ========================= */
+
+        function resizeIframe(frame) {
+
+            if (!frame) return;
+
+            try {
+
+                const frameDocument =
+                    frame.contentDocument ||
+                    frame.contentWindow.document;
+
+                const height = Math.max(
+                    frameDocument.documentElement.scrollHeight,
+                    frameDocument.body.scrollHeight
+                );
+
+                frame.style.height = height + "px";
+
+            }
+
+            catch (error) {
+
+                console.log(
+                    "Could not resize iframe:",
+                    error
+                );
+
+            }
+
+        }
+
+
+        function setupAutoResize(frameId) {
+
+            const frame =
+                document.getElementById(frameId);
+
+            if (!frame) return;
+
+
+            frame.addEventListener(
+                "load",
+                function() {
+
+                    resizeIframe(frame);
+
+
+                    setTimeout(
+                        function() {
+                            resizeIframe(frame);
+                        },
+                        300
+                    );
+
+
+                    setTimeout(
+                        function() {
+                            resizeIframe(frame);
+                        },
+                        1000
+                    );
+
+
+                    setTimeout(
+                        function() {
+                            resizeIframe(frame);
+                        },
+                        2000
+                    );
+
+
+                    try {
+
+                        const frameDocument =
+                            frame.contentDocument ||
+                            frame.contentWindow.document;
+
+                        if (
+                            typeof ResizeObserver !==
+                            "undefined"
+                        ) {
+
+                            const observer =
+                                new ResizeObserver(
+                                    function() {
+                                        resizeIframe(frame);
+                                    }
+                                );
+
+                            observer.observe(
+                                frameDocument.documentElement
+                            );
+
+                            if (frameDocument.body) {
+
+                                observer.observe(
+                                    frameDocument.body
+                                );
+
+                            }
+
+                        }
+
+                    }
+
+                    catch (error) {
+
+                        console.log(
+                            "ResizeObserver could not be attached:",
+                            error
+                        );
+
+                    }
+
+                }
+            );
+
+        }
+
+
+        setupAutoResize("calculatorFrame");
+
+        setupAutoResize("subsidyFrame");
+
+
+        window.addEventListener(
+            "resize",
+            function() {
+
+                resizeIframe(
+                    document.getElementById(
+                        "calculatorFrame"
+                    )
+                );
+
+                resizeIframe(
+                    document.getElementById(
+                        "subsidyFrame"
+                    )
+                );
+
+            }
+        );
 
 
         /* =========================
@@ -913,8 +1003,18 @@
 
             window.scrollTo(0, 0);
 
-        }
 
+            setTimeout(function() {
+
+                resizeIframe(
+                    document.getElementById(
+                        "calculatorFrame"
+                    )
+                );
+
+            }, 100);
+
+        }
 
 
         /* =========================
@@ -922,8 +1022,6 @@
            ========================= */
 
         function openSubsidy() {
-
-            /* Hide all other pages */
 
             document.getElementById("homePage")
                 .style.display = "none";
@@ -953,8 +1051,6 @@
                 .style.display = "none";
 
 
-            /* Show subsidy */
-
             const subsidyPage =
                 document.getElementById("subsidyPage");
 
@@ -973,10 +1069,6 @@
             window.scrollTo(0, 0);
 
 
-            /* =========================
-               START SUBSIDY COUNTERS
-               ========================= */
-
             const subsidyFrame =
                 document.getElementById("subsidyFrame");
 
@@ -985,6 +1077,8 @@
 
                 setTimeout(function() {
 
+                    resizeIframe(subsidyFrame);
+
                     subsidyFrame.contentWindow.postMessage(
                         "START_SUBSIDY_COUNTER",
                         "*"
@@ -992,10 +1086,23 @@
 
                 }, 100);
 
+
+                setTimeout(function() {
+
+                    resizeIframe(subsidyFrame);
+
+                }, 1000);
+
+
+                setTimeout(function() {
+
+                    resizeIframe(subsidyFrame);
+
+                }, 2000);
+
             }
 
         }
-
 
 
         /* =========================
@@ -1021,7 +1128,6 @@
             window.scrollTo(0, 0);
 
         }
-
 
 
         /* =========================
@@ -1050,7 +1156,6 @@
             window.scrollTo(0, 0);
 
         }
-
 
 
         /* =========================
@@ -1082,7 +1187,6 @@
             window.scrollTo(0, 0);
 
         }
-
 
 
         /* =========================
@@ -1117,7 +1221,6 @@
             window.scrollTo(0, 0);
 
         }
-
 
 
         /* =========================
@@ -1163,7 +1266,6 @@
         }
 
 
-
         /* =========================
            OPEN OFF GRID
            ========================= */
@@ -1207,7 +1309,6 @@
         }
 
 
-
         /* =========================
            OPEN HYBRID
            ========================= */
@@ -1249,7 +1350,6 @@
             window.scrollTo(0, 0);
 
         }
-
 
 
         /* =========================
@@ -1316,8 +1416,6 @@
         <div class="consultation-box">
 
 
-            <!-- CLOSE -->
-
             <button
                 class="close-btn"
                 onclick="closeConsultation()">
@@ -1366,62 +1464,62 @@
 
             <!-- PHONE -->
 
-<label for="phone">
-    Phone Number
-</label>
+            <label for="phone">
+                Phone Number
+            </label>
 
-<div class="phone-otp-row">
+            <div class="phone-otp-row">
 
-    <input
-        type="tel"
-        id="phone"
-        placeholder="Enter your phone number"
-        maxlength="10"
-        inputmode="numeric">
+                <input
+                    type="tel"
+                    id="phone"
+                    placeholder="Enter your phone number"
+                    maxlength="10"
+                    inputmode="numeric">
 
-    <button
-        type="button"
-        id="getOtpBtn"
-        onclick="getOTP()">
+                <button
+                    type="button"
+                    id="getOtpBtn"
+                    onclick="getOTP()">
 
-        Get OTP
+                    Get OTP
 
-    </button>
+                </button>
 
-</div>
+            </div>
 
 
-<!-- OTP -->
+            <!-- OTP -->
 
-<div id="otpSection" style="display: none;">
+            <div id="otpSection" style="display: none;">
 
-    <label for="otp">
-        Enter OTP
-    </label>
+                <label for="otp">
+                    Enter OTP
+                </label>
 
-    <div class="otp-row">
+                <div class="otp-row">
 
-        <input
-            type="text"
-            id="otp"
-            placeholder="Enter OTP"
-            maxlength="4"
-            inputmode="numeric">
+                    <input
+                        type="text"
+                        id="otp"
+                        placeholder="Enter OTP"
+                        maxlength="4"
+                        inputmode="numeric">
 
-        <button
-            type="button"
-            id="verifyOtpBtn"
-            onclick="verifyOTP()">
+                    <button
+                        type="button"
+                        id="verifyOtpBtn"
+                        onclick="verifyOTP()">
 
-            Verify
+                        Verify
 
-        </button>
+                    </button>
 
-    </div>
+                </div>
 
-    <p id="otpMessage"></p>
+                <p id="otpMessage"></p>
 
-</div>
+            </div>
 
 
 
@@ -1458,38 +1556,72 @@
 
             <!-- SUBMIT -->
 
-            <button class="submit-btn" type="button" onclick="submitConsultation()">
-    Submit Request
-</button>
+            <button
+                class="submit-btn"
+                type="button"
+                onclick="submitConsultation()">
+
+                Submit Request
+
+            </button>
 
 
         </div>
 
     </div>
-<script>
-var configuration = {
-    widgetId: "36696d6d6852333035303438",
-    tokenAuth: "569497T1Ml7t54xwS6aa19371P1",
-    identifier: "",
-    exposeMethods: true,
 
-    captchaRenderId: "",
 
-    success: (data) => {
-        console.log("MSG91 success:", data);
-    },
+    <!-- =========================
+         MSG91 OTP
+         ========================= -->
 
-    failure: (error) => {
-        console.log("MSG91 error:", error);
-    }
-};
-</script>
-<script
-    type="text/javascript"
-    onload="initSendOTP(configuration)"
-    src="https://verify.msg91.com/otp-provider.js">
-</script>
+    <script>
 
+        var configuration = {
+
+            widgetId: "36696d6d6852333035303438",
+            tokenAuth: "569497T1Ml7t54xwS6aa19371P1",
+
+            identifier: "",
+
+            exposeMethods: true,
+
+            captchaRenderId: "",
+
+            success: (data) => {
+
+                console.log(
+                    "MSG91 success:",
+                    data
+                );
+
+            },
+
+            failure: (error) => {
+
+                console.log(
+                    "MSG91 error:",
+                    error
+                );
+
+            }
+
+        };
+
+    </script>
+
+
+    <script
+        type="text/javascript"
+        onload="initSendOTP(configuration)"
+        src="https://verify.msg91.com/otp-provider.js">
+    </script>
+
+
+
+    <!-- =========================
+         FORM VALIDATION + OTP
+         ========================= -->
 
     <script>
 
@@ -1534,146 +1666,362 @@ var configuration = {
                         .slice(0, 6);
 
             });
-// =============================
-// OTP TEST FUNCTIONALITY
-// =============================
 
-function getOTP() {
-    const phone = document.getElementById("phone").value;
-    const otpSection = document.getElementById("otpSection");
-    const otpMessage = document.getElementById("otpMessage");
 
-    if (phone.length !== 10) {
-        alert("Please enter a valid 10-digit phone number.");
-        return;
-    }
 
-    if (typeof sendOtp !== "function") {
-        alert("MSG91 OTP service has not loaded.");
-        console.log("sendOtp function is not available");
-        return;
-    }
+        // =============================
+        // OTP
+        // =============================
 
-    const identifier = "91" + phone;
+        function getOTP() {
 
-    console.log("Sending OTP to:", identifier);
+            const phone =
+                document.getElementById("phone").value;
 
-    sendOtp(
-        identifier,
-        function (data) {
-            console.log("OTP sent successfully:", data);
+            const otpSection =
+                document.getElementById("otpSection");
 
-            otpSection.style.display = "block";
-            otpMessage.textContent = "OTP sent successfully.";
-            otpMessage.style.color = "#234";
-        },
-        function (error) {
-            console.log("OTP sending failed:", error);
+            const otpMessage =
+                document.getElementById("otpMessage");
 
-            otpMessage.textContent = "Failed to send OTP.";
-            otpMessage.style.color = "red";
+
+            if (phone.length !== 10) {
+
+                alert(
+                    "Please enter a valid 10-digit phone number."
+                );
+
+                return;
+
+            }
+
+
+            if (typeof sendOtp !== "function") {
+
+                alert(
+                    "MSG91 OTP service has not loaded."
+                );
+
+                console.log(
+                    "sendOtp function is not available"
+                );
+
+                return;
+
+            }
+
+
+            const identifier =
+                "91" + phone;
+
+
+            console.log(
+                "Sending OTP to:",
+                identifier
+            );
+
+
+            sendOtp(
+
+                identifier,
+
+                function (data) {
+
+                    console.log(
+                        "OTP sent successfully:",
+                        data
+                    );
+
+
+                    otpSection.style.display =
+                        "block";
+
+
+                    otpMessage.textContent =
+                        "OTP sent successfully.";
+
+
+                    otpMessage.style.color =
+                        "#234";
+
+                },
+
+
+                function (error) {
+
+                    console.log(
+                        "OTP sending failed:",
+                        error
+                    );
+
+
+                    otpMessage.textContent =
+                        "Failed to send OTP.";
+
+
+                    otpMessage.style.color =
+                        "red";
+
+                }
+
+            );
+
         }
-    );
-}
-function verifyOTP() {
 
-    const otp = document.getElementById("otp").value;
-    const otpMessage = document.getElementById("otpMessage");
 
-    if (otp.length !== 4) {
-        otpMessage.textContent = "Please enter the 4-digit OTP.";
-        otpMessage.style.color = "red";
-        return;
-    }
 
-    window.verifyOtp(
-        otp,
+        function verifyOTP() {
 
-        function (data) {
-            console.log("OTP verified:", data);
+            const otp =
+                document.getElementById("otp").value;
 
-            otpMessage.textContent =
-                "✓ Phone number verified successfully!";
-            otpMessage.style.color = "#1b8f3a";
+            const otpMessage =
+                document.getElementById("otpMessage");
 
-            document.getElementById("phone").disabled = true;
-            document.getElementById("getOtpBtn").disabled = true;
-            document.getElementById("otp").disabled = true;
-            document.getElementById("verifyOtpBtn").disabled = true;
-        },
 
-        function (error) {
-            console.log("Verification error:", error);
+            if (otp.length !== 4) {
 
-            otpMessage.textContent =
-                "Invalid OTP. Please try again.";
-            otpMessage.style.color = "red";
+                otpMessage.textContent =
+                    "Please enter the 4-digit OTP.";
+
+                otpMessage.style.color =
+                    "red";
+
+                return;
+
+            }
+
+
+            window.verifyOtp(
+
+                otp,
+
+                function (data) {
+
+                    console.log(
+                        "OTP verified:",
+                        data
+                    );
+
+
+                    otpMessage.textContent =
+                        "✓ Phone number verified successfully!";
+
+
+                    otpMessage.style.color =
+                        "#1b8f3a";
+
+
+                    document.getElementById(
+                        "phone"
+                    ).disabled = true;
+
+
+                    document.getElementById(
+                        "getOtpBtn"
+                    ).disabled = true;
+
+
+                    document.getElementById(
+                        "otp"
+                    ).disabled = true;
+
+
+                    document.getElementById(
+                        "verifyOtpBtn"
+                    ).disabled = true;
+
+                },
+
+
+                function (error) {
+
+                    console.log(
+                        "Verification error:",
+                        error
+                    );
+
+
+                    otpMessage.textContent =
+                        "Invalid OTP. Please try again.";
+
+
+                    otpMessage.style.color =
+                        "red";
+
+                }
+
+            );
+
         }
-    );
-}
-function submitConsultation() {
 
-    const name = document.getElementById("name").value.trim();
-    const email = document.getElementById("email").value.trim();
-    const phone = document.getElementById("phone").value.trim();
-    const pincode = document.getElementById("pincode").value.trim();
-    const bill = document.getElementById("bill").value.trim();
 
-    if (!name || !email || !phone || !pincode || !bill) {
-        alert("Please fill in all the details.");
-        return;
-    }
 
-    if (document.getElementById("phone").disabled !== true) {
-        alert("Please verify your phone number with OTP first.");
-        return;
-    }
+        // =============================
+        // CONSULTATION SUBMIT
+        // =============================
 
-    const templateParams = {
-        name: name,
-        email: email,
-        phone: phone,
-        pincode: pincode,
-        bill: bill
-    };
+        function submitConsultation() {
 
-    console.log("STEP 1: Sending customer email...");
+            const name =
+                document.getElementById("name")
+                    .value.trim();
 
-    emailjs.send(
-        "service_oonozha",
-        "template_0b16cta",
-        templateParams
-    )
-    .then(function(response) {
 
-        console.log("STEP 2: Customer email sent:", response);
-        console.log("STEP 3: Sending business email...");
+            const email =
+                document.getElementById("email")
+                    .value.trim();
 
-        return emailjs.send(
-            "service_oonozha",
-            "template_gp51hw6",
-            templateParams
-        );
-    })
-    .then(function(response) {
 
-        console.log("STEP 4: Business email sent:", response);
+            const phone =
+                document.getElementById("phone")
+                    .value.trim();
 
-        alert("Thank you! Your consultation request has been submitted successfully.");
 
-        closeConsultation();
-    })
-    .catch(function(error) {
+            const pincode =
+                document.getElementById("pincode")
+                    .value.trim();
 
-        console.error("EMAIL ERROR:", error);
-        console.error("ERROR STATUS:", error.status);
-        console.error("ERROR TEXT:", error.text);
 
-        alert("Email sending failed. Please check the console.");
-    });
-}
+            const bill =
+                document.getElementById("bill")
+                    .value.trim();
 
-</script>
+
+            if (
+                !name ||
+                !email ||
+                !phone ||
+                !pincode ||
+                !bill
+            ) {
+
+                alert(
+                    "Please fill in all the details."
+                );
+
+                return;
+
+            }
+
+
+            if (
+                document.getElementById("phone")
+                    .disabled !== true
+            ) {
+
+                alert(
+                    "Please verify your phone number with OTP first."
+                );
+
+                return;
+
+            }
+
+
+            const templateParams = {
+
+                name: name,
+
+                email: email,
+
+                phone: phone,
+
+                pincode: pincode,
+
+                bill: bill
+
+            };
+
+
+            console.log(
+                "STEP 1: Sending customer email..."
+            );
+
+
+            emailjs.send(
+
+                "service_oonozha",
+
+                "template_0b16cta",
+
+                templateParams
+
+            )
+
+            .then(function (response) {
+
+                console.log(
+                    "STEP 2: Customer email sent:",
+                    response
+                );
+
+
+                console.log(
+                    "STEP 3: Sending business email..."
+                );
+
+
+                return emailjs.send(
+
+                    "service_oonozha",
+
+                    "template_gp51hw6",
+
+                    templateParams
+
+                );
+
+            })
+
+            .then(function (response) {
+
+                console.log(
+                    "STEP 4: Business email sent:",
+                    response
+                );
+
+
+                alert(
+                    "Thank you! Your consultation request has been submitted successfully."
+                );
+
+
+                closeConsultation();
+
+            })
+
+            .catch(function (error) {
+
+                console.error(
+                    "EMAIL ERROR:",
+                    error
+                );
+
+
+                console.error(
+                    "ERROR STATUS:",
+                    error.status
+                );
+
+
+                console.error(
+                    "ERROR TEXT:",
+                    error.text
+                );
+
+
+                alert(
+                    "Email sending failed. Please check the console."
+                );
+
+            });
+
+        }
+
+
+    </script>
+
 
 </body>
 
