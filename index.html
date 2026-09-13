@@ -1637,7 +1637,8 @@ function submitConsultation() {
         bill: bill
     };
 
-    // Customer confirmation email
+    console.log("STEP 1: Sending customer email...");
+
     emailjs.send(
         "service_oonozha",
         "template_0b16cta",
@@ -1645,31 +1646,30 @@ function submitConsultation() {
     )
     .then(function(response) {
 
-        console.log("Customer email sent successfully:", response);
+        console.log("STEP 2: Customer email sent:", response);
+        console.log("STEP 3: Sending business email...");
 
-        // Business notification email
         return emailjs.send(
             "service_oonozha",
             "template_gp51hw6",
             templateParams
         );
-
     })
     .then(function(response) {
 
-        console.log("Business email sent successfully:", response);
+        console.log("STEP 4: Business email sent:", response);
 
         alert("Thank you! Your consultation request has been submitted successfully.");
 
         closeConsultation();
-
     })
     .catch(function(error) {
 
-        console.error("Email sending failed:", error);
+        console.error("EMAIL ERROR:", error);
+        console.error("ERROR STATUS:", error.status);
+        console.error("ERROR TEXT:", error.text);
 
-        alert("Unable to send your request. Please try again.");
-
+        alert("Email sending failed. Please check the console.");
     });
 }
 
