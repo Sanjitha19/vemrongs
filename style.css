@@ -373,3 +373,73 @@ body.subsidy-open {
     border: none;
     display: block;
 }
+/* ============================= */
+/* PHONE + OTP SECTION */
+/* ============================= */
+
+.phone-otp-row,
+.otp-row {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+}
+
+.phone-otp-row input,
+.otp-row input {
+    flex: 1;
+}
+
+.phone-otp-row button {
+    width: 100px;
+    border: none;
+    border-radius: 6px;
+    background: #234;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.phone-otp-row button:hover {
+    background: #123;
+}
+
+.otp-row button {
+    width: 100px;
+    border: none;
+    border-radius: 6px;
+    background: #1b8f3a;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.otp-row button:hover {
+    background: #14752f;
+}
+
+#otpSection {
+    margin-top: 12px;
+}
+
+#otpMessage {
+    margin-top: 8px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+
+    .phone-otp-row,
+    .otp-row {
+        gap: 7px;
+    }
+
+    .phone-otp-row button,
+    .otp-row button {
+        width: 90px;
+        font-size: 12px;
+    }
+}
