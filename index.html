@@ -1300,6 +1300,7 @@
 
         }
 
+
     </script>
 
 
@@ -1457,13 +1458,9 @@
 
             <!-- SUBMIT -->
 
-            <button
-                class="submit-btn"
-                onclick="alert('Thank you! We will contact you soon.')">
-
-                Submit Request
-
-            </button>
+            <button class="submit-btn" type="button" onclick="submitConsultation()">
+    Submit Request
+</button>
 
 
         </div>
@@ -1613,6 +1610,42 @@ function verifyOTP() {
             otpMessage.style.color = "red";
         }
     );
+}
+        function submitConsultation() {
+
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+
+    if (!name || !email || !phone) {
+        alert("Please fill in all the details.");
+        return;
+    }
+
+    if (document.getElementById("phone").disabled !== true) {
+        alert("Please verify your phone number with OTP first.");
+        return;
+    }
+
+    const templateParams = {
+        name: name,
+        email: email
+    };
+
+    emailjs.send(
+        "service_oonozha",
+        "template_0b16cta",
+        templateParams
+    )
+    .then(function(response) {
+        console.log("Email sent successfully:", response);
+        alert("Thank you! Your consultation request has been submitted successfully.");
+        closeConsultation();
+    })
+    .catch(function(error) {
+        console.error("Email sending failed:", error);
+        alert("Unable to send your request. Please try again.");
+    });
 }
 </script>
 
