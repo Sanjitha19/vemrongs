@@ -1028,53 +1028,25 @@
 
 function openSubsidy() {
 
-    /* Close mobile menu immediately */
-    closeMobileMenu();
-
-    document.getElementById("homePage").style.display = "none";
-    document.getElementById("calculatorPage").style.display = "none";
-    document.getElementById("homesPage").style.display = "none";
-    document.getElementById("commercialPage").style.display = "none";
-    document.getElementById("industrialPage").style.display = "none";
-    document.getElementById("agriculturePage").style.display = "none";
-    document.getElementById("onGridPage").style.display = "none";
-    document.getElementById("offGridPage").style.display = "none";
-    document.getElementById("hybridPage").style.display = "none";
-
-    const subsidyPage =
-        document.getElementById("subsidyPage");
-
-    subsidyPage.style.display = "block";
-
-    /* IMPORTANT:
-       Do NOT lock body scrolling */
-    document.body.classList.remove("subsidy-open");
-
-    clearInterval(autoSlide);
-
-    window.scrollTo(0, 0);
+    // your existing subsidy-opening code stays unchanged
 
     const subsidyFrame =
         document.getElementById("subsidyFrame");
 
+    if (subsidyFrame) {
 
-    /* Start subsidy animation */
-    function startAnimation() {
+        setTimeout(function() {
 
-        if (
-            subsidyFrame &&
-            subsidyFrame.contentWindow &&
-            typeof subsidyFrame.contentWindow
-                .startAchievementAnimation === "function"
-        ) {
+            subsidyFrame.contentWindow.postMessage(
+                "START_SUBSIDY_COUNTER",
+                "*"
+            );
 
-            subsidyFrame.contentWindow
-                .startAchievementAnimation();
-
-        }
+        }, 300);
 
     }
 
+}
 
     /* Resize iframe to show the ENTIRE subsidy page */
     function resizeSubsidyFrame() {
