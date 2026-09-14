@@ -1022,100 +1022,127 @@
         }
 
 
-        /* =========================
-           OPEN SUBSIDY
-           ========================= */
+       /* =====================================================
+   OPEN SUBSIDY
+   ===================================================== */
 
-        function openSubsidy() {
+function openSubsidy() {
 
-            document.getElementById("homePage")
-                .style.display = "none";
+    /* Close mobile menu immediately */
+    closeMobileMenu();
 
-            document.getElementById("calculatorPage")
-                .style.display = "none";
+    document.getElementById("homePage").style.display = "none";
+    document.getElementById("calculatorPage").style.display = "none";
+    document.getElementById("homesPage").style.display = "none";
+    document.getElementById("commercialPage").style.display = "none";
+    document.getElementById("industrialPage").style.display = "none";
+    document.getElementById("agriculturePage").style.display = "none";
+    document.getElementById("onGridPage").style.display = "none";
+    document.getElementById("offGridPage").style.display = "none";
+    document.getElementById("hybridPage").style.display = "none";
 
-            document.getElementById("homesPage")
-                .style.display = "none";
+    const subsidyPage =
+        document.getElementById("subsidyPage");
 
-            document.getElementById("commercialPage")
-                .style.display = "none";
+    subsidyPage.style.display = "block";
 
-            document.getElementById("industrialPage")
-                .style.display = "none";
+    /* IMPORTANT:
+       Do NOT lock body scrolling */
+    document.body.classList.remove("subsidy-open");
 
-            document.getElementById("agriculturePage")
-                .style.display = "none";
+    clearInterval(autoSlide);
 
-            document.getElementById("onGridPage")
-                .style.display = "none";
+    window.scrollTo(0, 0);
 
-            document.getElementById("offGridPage")
-                .style.display = "none";
-
-            document.getElementById("hybridPage")
-                .style.display = "none";
-
-
-            const subsidyPage =
-                document.getElementById("subsidyPage");
-
-            subsidyPage.style.display = "block";
+    const subsidyFrame =
+        document.getElementById("subsidyFrame");
 
 
-            document.body.classList.add(
-                "subsidy-open"
-            );
+    /* Start subsidy animation */
+    function startAnimation() {
 
+        if (
+            subsidyFrame &&
+            subsidyFrame.contentWindow &&
+            typeof subsidyFrame.contentWindow
+                .startAchievementAnimation === "function"
+        ) {
 
-            setHeaderHeight();
-
-            clearInterval(autoSlide);
-
-            window.scrollTo(0, 0);
-
-
-            const subsidyFrame =
-                document.getElementById("subsidyFrame");
-
-
-            if (subsidyFrame) {
-
-                setTimeout(function() {
-
-                    resizeIframe(subsidyFrame);
-
-                    subsidyFrame.contentWindow.postMessage(
-                        "START_SUBSIDY_COUNTER",
-                        "*"
-                    );
-
-                }, 100);
-
-
-                setTimeout(function() {
-
-                    resizeIframe(subsidyFrame);
-
-                }, 1000);
-
-
-                setTimeout(function() {
-
-                    resizeIframe(subsidyFrame);
-
-                }, 2000);
-
-
-                setTimeout(function() {
-
-                    resizeIframe(subsidyFrame);
-
-                }, 3000);
-
-            }
+            subsidyFrame.contentWindow
+                .startAchievementAnimation();
 
         }
 
+    }
+
+
+    /* Resize iframe to show the ENTIRE subsidy page */
+    function resizeSubsidyFrame() {
+
+        if (
+            !subsidyFrame ||
+            !subsidyFrame.contentDocument
+        ) {
+            return;
+        }
+
+        const doc =
+            subsidyFrame.contentDocument;
+
+        const height = Math.max(
+            doc.body.scrollHeight,
+            doc.body.offsetHeight,
+            doc.documentElement.scrollHeight,
+            doc.documentElement.offsetHeight
+        );
+
+        subsidyFrame.style.height =
+            height + "px";
+    }
+
+
+    /* When subsidy loads */
+    subsidyFrame.onload = function() {
+
+        startAnimation();
+
+        resizeSubsidyFrame();
+
+        /* Recalculate after fonts/layout settle */
+        setTimeout(
+            resizeSubsidyFrame,
+            300
+        );
+
+        setTimeout(
+            resizeSubsidyFrame,
+            1000
+        );
+
+        setTimeout(
+            resizeSubsidyFrame,
+            2000
+        );
+
+    };
+
+
+    /* If already loaded */
+    setTimeout(
+        resizeSubsidyFrame,
+        100
+    );
+
+    setTimeout(
+        resizeSubsidyFrame,
+        500
+    );
+
+    setTimeout(
+        resizeSubsidyFrame,
+        1500
+    );
+}
 
         /* =========================
            OPEN HOMES
@@ -1459,6 +1486,201 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 });
+        /* =====================================================
+   MOBILE MENU
+   ===================================================== */
+
+function toggleMobileMenu() {
+
+    const nav = document.querySelector("header nav");
+    const button = document.querySelector(".menu-toggle");
+
+    if (!nav) return;
+
+    nav.classList.toggle("mobile-menu-open");
+
+    if (button) {
+        button.textContent =
+            nav.classList.contains("mobile-menu-open")
+                ? "✕"
+                : "☰";
+    }
+}
+
+
+/* =====================================================
+   CLOSE MOBILE MENU
+   ===================================================== */
+
+function closeMobileMenu() {
+
+    const nav = document.querySelector("header nav");
+    const button = document.querySelector(".menu-toggle");
+
+    if (!nav) return;
+
+    nav.classList.remove("mobile-menu-open");
+
+    document.querySelectorAll(
+        "header nav .dropdown"
+    ).forEach(function(dropdown) {
+
+        dropdown.classList.remove(
+            "mobile-dropdown-open"
+        );
+
+    });
+
+    if (button) {
+        button.textContent = "☰";
+    }
+}
+
+
+/* =====================================================
+   MOBILE DROPDOWNS
+   ONLY ONE DROPDOWN OPEN AT A TIME
+   ===================================================== */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function() {
+
+        const dropdowns =
+            document.querySelectorAll(
+                "header nav .dropdown"
+            );
+
+        dropdowns.forEach(function(dropdown) {
+
+            const link =
+                dropdown.querySelector(":scope > a");
+
+            if (!link) return;
+
+            link.addEventListener(
+                "click",
+                function(event) {
+
+                    if (window.innerWidth <= 768) {
+
+                        event.preventDefault();
+
+                        /* Close every other dropdown */
+                        dropdowns.forEach(
+                            function(otherDropdown) {
+
+                                if (
+                                    otherDropdown !==
+                                    dropdown
+                                ) {
+                                    otherDropdown.classList.remove(
+                                        "mobile-dropdown-open"
+                                    );
+                                }
+
+                            }
+                        );
+
+                        /* Toggle current dropdown */
+                        dropdown.classList.toggle(
+                            "mobile-dropdown-open"
+                        );
+                    }
+
+                }
+            );
+
+        });
+
+
+        /* Close menu when a normal navigation item is clicked */
+
+        document.querySelectorAll(
+            "header nav > a"
+        ).forEach(function(link) {
+
+            link.addEventListener(
+                "click",
+                function() {
+
+                    if (window.innerWidth <= 768) {
+                        closeMobileMenu();
+                    }
+
+                }
+            );
+
+        });
+
+
+        /* Close menu when submenu item is clicked */
+
+        document.querySelectorAll(
+            "header nav .dropdown-menu a"
+        ).forEach(function(link) {
+
+            link.addEventListener(
+                "click",
+                function() {
+
+                    if (window.innerWidth <= 768) {
+                        closeMobileMenu();
+                    }
+
+                }
+            );
+
+        });
+
+
+        /* Close when clicking outside */
+
+        document.addEventListener(
+            "click",
+            function(event) {
+
+                if (window.innerWidth > 768) return;
+
+                const nav =
+                    document.querySelector("header nav");
+
+                const button =
+                    document.querySelector(".menu-toggle");
+
+                if (!nav) return;
+
+                if (
+                    nav.classList.contains(
+                        "mobile-menu-open"
+                    ) &&
+                    !nav.contains(event.target) &&
+                    !button.contains(event.target)
+                ) {
+
+                    closeMobileMenu();
+
+                }
+
+            }
+        );
+
+
+        /* ESC closes menu */
+
+        document.addEventListener(
+            "keydown",
+            function(event) {
+
+                if (event.key === "Escape") {
+                    closeMobileMenu();
+                }
+
+            }
+        );
+
+    }
+);
     </script>
 
 
