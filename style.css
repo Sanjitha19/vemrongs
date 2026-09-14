@@ -443,3 +443,129 @@ body.subsidy-open {
         font-size: 12px;
     }
 }
+/* =====================================================
+   MOBILE MENU
+   Desktop navigation remains unchanged
+   ===================================================== */
+
+.menu-toggle {
+    display: none;
+}
+
+
+/* =====================================================
+   MOBILE NAVIGATION
+   ===================================================== */
+
+@media (max-width: 768px) {
+
+    header {
+        position: relative;
+    }
+
+    /* Hamburger button */
+    .menu-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 44px;
+        height: 44px;
+
+        border: none;
+        background: transparent;
+
+        font-size: 30px;
+        cursor: pointer;
+
+        padding: 0;
+        margin-left: auto;
+
+        z-index: 1001;
+    }
+
+    /* Mobile navigation */
+    header nav {
+        display: none;
+
+        position: absolute;
+
+        top: 100%;
+        left: 0;
+        right: 0;
+
+        width: 100%;
+
+        flex-direction: column;
+        align-items: stretch;
+
+        background: white;
+
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+
+        z-index: 1000;
+
+        padding: 10px 0;
+    }
+
+    /* Open menu */
+    header nav.mobile-menu-open {
+        display: flex;
+    }
+
+    /* Main menu items */
+    header nav > a,
+    header nav > .dropdown > a {
+        width: 100%;
+
+        padding: 14px 22px;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        text-decoration: none;
+    }
+
+    /* Dropdown containers */
+    header nav .dropdown {
+        width: 100%;
+    }
+
+    /* Dropdown menus on mobile */
+    header nav .dropdown-menu {
+        position: static;
+
+        display: none;
+
+        width: 100%;
+
+        box-shadow: none;
+
+        background: #f7f7f7;
+
+        padding: 0;
+    }
+
+    /* Show dropdown when opened */
+    header nav .dropdown.mobile-dropdown-open .dropdown-menu {
+        display: block;
+    }
+
+    /* Dropdown submenu items */
+    header nav .dropdown-menu a {
+        display: block;
+
+        width: 100%;
+
+        padding: 12px 42px;
+
+        text-decoration: none;
+    }
+
+    /* Keep arrow visible */
+    header nav .arrow {
+        margin-left: 8px;
+    }
+
+}
