@@ -1412,7 +1412,53 @@
 
         }
 
+/* =========================
+   MOBILE MENU
+   ========================= */
 
+function toggleMobileMenu() {
+
+    const nav = document.querySelector("header nav");
+
+    if (!nav) return;
+
+    nav.classList.toggle("mobile-menu-open");
+}
+
+
+/* =========================
+   MOBILE DROPDOWNS
+   ========================= */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const dropdowns =
+        document.querySelectorAll("header nav .dropdown");
+
+    dropdowns.forEach(function (dropdown) {
+
+        const mainLink =
+            dropdown.querySelector(":scope > a");
+
+        if (!mainLink) return;
+
+        mainLink.addEventListener("click", function (event) {
+
+            if (window.innerWidth <= 768) {
+
+                event.preventDefault();
+
+                dropdown.classList.toggle(
+                    "mobile-dropdown-open"
+                );
+
+            }
+
+        });
+
+    });
+
+});
     </script>
 
 
