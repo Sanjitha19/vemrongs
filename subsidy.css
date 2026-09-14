@@ -619,28 +619,46 @@ body {
    SUN RING
    ========================================================= */
 
+@property --progress {
+    syntax: "<percentage>";
+    inherits: true;
+    initial-value: 100%;
+}
+
 .sun-ring {
-    width: 210px;
-    height: 210px;
+    --progress: 100%;
 
-    margin:
-        0 auto 28px;
+    width: 215px;
+    height: 215px;
 
-    padding: 8px;
+    margin: 0 auto 30px;
 
     border-radius: 50%;
 
     background:
         conic-gradient(
-            #ff9800,
-            #ffd166,
-            #ff9800
+            from 0deg,
+            #ff7b00 0%,
+            #ffb703 var(--progress),
+            #ffe3a3 var(--progress),
+            #ffe3a3 100%
         );
 
-    display: flex;
+    padding: 9px;
 
+    display: flex;
     align-items: center;
     justify-content: center;
+
+    box-shadow:
+        0 0 0 8px
+        rgba(255, 209, 102, 0.25),
+
+        0 12px 35px
+        rgba(255, 140, 66, 0.25);
+
+    transition:
+        background 1s linear;
 }
 
 
