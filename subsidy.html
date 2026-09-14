@@ -4,333 +4,137 @@
 <head>
 
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Vermon Grid Solutions</title>
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-    <link rel="stylesheet" href="style.css">
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <title>Solar Subsidy</title>
 
-    <script>
-        emailjs.init({
-            publicKey: "9ePHTbW7ITYC8yPJ7"
-        });
-    </script>
+    <link
+        rel="stylesheet"
+        href="subsidy.css"
+    >
 
 </head>
 
 
 <body>
 
-
-    <!-- =========================
-         HEADER
-         ========================= -->
-
-    <header>
-
-        <img src="Webpage.png" alt="Vermon Grid Solutions">
-
-        <button
-            class="menu-toggle"
-            onclick="toggleMobileMenu()"
-            aria-label="Open menu">
-            ☰
-        </button>
-
-        <nav>
-
-            <a href="#" onclick="openHome(); return false;">
-                Home
-            </a>
+<div class="subsidy-container">
 
 
-            <div class="dropdown">
+    <!-- =====================================================
+         LEFT COLUMN
+         ACHIEVEMENT + SUBSIDY + ELIGIBILITY
+         ===================================================== -->
 
-                <a href="#">
-                    Solutions
-                    <span class="arrow"></span>
-                </a>
+    <div class="left-column">
 
-                <div class="dropdown-menu">
 
-                    <a href="#" onclick="openHomes(); return false;">
-                        Homes
-                    </a>
+        <!-- =================================================
+             SCHEME ACHIEVEMENT
+             ================================================= -->
 
-                    <a href="#" onclick="openCommercial(); return false;">
-                        Commercial
-                    </a>
+        <div class="achievement-section">
 
-                    <a href="#" onclick="openIndustrial(); return false;">
-                        Industrial
-                    </a>
+            <div class="achievement-title">
 
-                    <a href="#" onclick="openAgriculture(); return false;">
-                        Agriculture
-                    </a>
-
-                </div>
+                <h2>
+                    SCHEME ACHIEVEMENT AT A GLANCE
+                </h2>
 
             </div>
 
 
-            <div class="dropdown">
+            <div class="achievement-date">
 
-                <a href="#">
-                    Services
-                    <span class="arrow"></span>
-                </a>
+                <h2>
+                    AS ON
+                </h2>
 
-                <div class="dropdown-menu">
+                <span>
 
-                    <a href="#" onclick="openOnGrid(); return false;">
-                        ON Grid
-                    </a>
+                    <h2>
+                        13 SEPT 2026
+                    </h2>
 
-                    <a href="#" onclick="openOffGrid(); return false;">
-                        OFF Grid
-                    </a>
-
-                    <a href="#" onclick="openHybrid(); return false;">
-                        Hybrid
-                    </a>
-
-                </div>
+                </span>
 
             </div>
 
 
-            <a href="#">
-                About Us
-            </a>
+            <div class="achievement-cards">
 
 
-            <div class="dropdown">
+                <!-- APPLICATION -->
 
-                <a href="#">
-                    More
-                    <span class="arrow"></span>
-                </a>
+                <div class="achievement-card">
 
-                <div class="dropdown-menu">
+                    <div class="achievement-icon">
+                        📄
+                    </div>
 
-                    <a href="#"
-                       onclick="openSubsidy(); return false;">
-                        Subsidy
-                    </a>
+                    <strong
+                        class="counter"
+                        data-target="8277659"
+                    >
+                        0
+                    </strong>
 
-                    <a href="#"
-                       onclick="openCalculator(); return false;">
-                        Calculator
-                    </a>
+                    <span>
+                        Total Application
+                    </span>
 
                 </div>
 
-            </div>
 
 
-            <a href="#"
-               onclick="openConsultation(); return false;">
-                Contact
-            </a>
+                <!-- INSTALLATIONS -->
 
-        </nav>
+                <div class="achievement-card">
 
-    </header>
+                    <div class="achievement-icon">
+                        🔧
+                    </div>
 
+                    <strong
+                        class="counter"
+                        data-target="4780376"
+                    >
+                        0
+                    </strong>
 
-
-    <!-- =========================
-         HOME PAGE / SLIDER
-         ========================= -->
-
-    <section class="slider" id="homePage">
-
-        <div class="slides" id="slides">
-
-
-            <!-- SLIDE 1 -->
-
-            <div class="slide">
-
-                <img
-                    src="solar.png"
-                    alt="Solar Energy">
-
-                <div class="slide-content">
-
-                    <h1>
-                        Power Your Future With Solar
-                    </h1>
-
-                    <p>
-                        Smart solar solutions for a cleaner,
-                        greener and more sustainable future.
-                    </p>
-
-                    <button onclick="openConsultation()">
-                        Get Free Consultation
-                    </button>
+                    <span>
+                        Total RTS Installations
+                    </span>
 
                 </div>
 
-            </div>
 
 
+                <!-- HOUSEHOLDS -->
 
-            <!-- SLIDE 2 -->
+                <div class="achievement-card">
 
-            <div class="slide">
+                    <div class="achievement-icon">
+                        🏠
+                    </div>
 
-                <img
-                    src="solar1.png"
-                    alt="Residential Solar">
+                    <strong
+                        class="counter"
+                        data-target="5687386"
+                    >
+                        0
+                    </strong>
 
-                <div class="slide-content">
-
-                    <h1>
-                        Solar For Your Home
-                    </h1>
-
-                    <p>
-                        Reliable and affordable solar energy
-                        solutions for your home.
-                    </p>
-
-                    <button>
-                        Explore Residential Solar
-                    </button>
+                    <span>
+                        Household Benefitted
+                    </span>
 
                 </div>
 
-            </div>
-
-
-
-            <!-- SLIDE 3 -->
-
-            <div class="slide">
-
-                <img
-                    src="solar4.png"
-                    alt="Agriculture Solar">
-
-                <div class="slide-content">
-
-                    <h1>
-                        Solar For Agriculture
-                    </h1>
-
-                    <p>
-                        Reliable solar solutions designed
-                        for modern agriculture.
-                    </p>
-
-                    <button>
-                        Explore Agriculture Solar
-                    </button>
-
-                </div>
-
-            </div>
-
-
-
-            <!-- SLIDE 4 -->
-
-            <div class="slide">
-
-                <img
-                    src="solar8.png"
-                    alt="EV Charging">
-
-            </div>
-
-
-
-            <!-- SLIDE 5 -->
-
-            <div class="slide">
-
-                <img
-                    src="solar2.png"
-                    alt="Commercial Solar">
-
-                <div class="slide-content">
-
-                    <h1>
-                        Power Your Business
-                    </h1>
-
-                    <p>
-                        Reduce energy costs and power your
-                        business with solar.
-                    </p>
-
-                    <button>
-                        Explore Commercial Solar
-                    </button>
-
-                </div>
-
-            </div>
-
-
-
-            <!-- SLIDE 6 -->
-
-            <div class="slide">
-
-                <img
-                    src="solar3.png"
-                    alt="Industrial Solar">
-
-                <div class="slide-content">
-
-                    <h1>
-                        Solar For Industry
-                    </h1>
-
-                    <p>
-                        Powerful solar solutions designed
-                        for industrial energy needs.
-                    </p>
-
-                    <button>
-                        Explore Industrial Solar
-                    </button>
-
-                </div>
-
-            </div>
-
-
-
-            <!-- DUPLICATE FIRST SLIDE -->
-
-            <div class="slide">
-
-                <img
-                    src="solar.png"
-                    alt="Solar Energy">
-
-                <div class="slide-content">
-
-                    <h1>
-                        Power Your Future With Solar
-                    </h1>
-
-                    <p>
-                        Smart solar solutions for a cleaner,
-                        greener and more sustainable future.
-                    </p>
-
-                    <button onclick="openConsultation()">
-                        Get Free Consultation
-                    </button>
-
-                </div>
 
             </div>
 
@@ -338,2255 +142,832 @@
 
 
 
-        <!-- SLIDER DOTS -->
+        <!-- =================================================
+             SUBSIDY + ELIGIBILITY
+             ================================================= -->
 
-        <div class="slider-dots">
+        <div class="subsidy-left">
 
-            <span
-                class="dot active"
-                onclick="showSlide(0)">
-            </span>
 
-            <span
-                class="dot"
-                onclick="showSlide(1)">
-            </span>
+            <!-- =========================
+                 SUBSIDY CARDS
+                 ========================= -->
 
-            <span
-                class="dot"
-                onclick="showSlide(2)">
-            </span>
+            <div class="subsidy-cards">
 
-            <span
-                class="dot"
-                onclick="showSlide(3)">
-            </span>
 
-            <span
-                class="dot"
-                onclick="showSlide(4)">
-            </span>
+                <!-- 1 KW -->
 
-            <span
-                class="dot"
-                onclick="showSlide(5)">
-            </span>
+                <div class="subsidy-card">
+
+                    <h2>
+                        1 kW
+                    </h2>
+
+                    <p class="amount">
+                        ₹30,000
+                    </p>
+
+                    <p>
+                        SUBSIDY
+                    </p>
+
+                </div>
+
+
+
+                <!-- 2 KW -->
+
+                <div class="subsidy-card">
+
+                    <h2>
+                        2 kW
+                    </h2>
+
+                    <p class="amount">
+                        ₹60,000
+                    </p>
+
+                    <p>
+                        SUBSIDY
+                    </p>
+
+                </div>
+
+
+
+                <!-- 3 KW -->
+
+                <div class="subsidy-card maximum-card">
+
+                    <div class="maximum-badge">
+                        ⭐ MAX SUBSIDY
+                    </div>
+
+                    <h2>
+                        3 kW & Above
+                    </h2>
+
+                    <p class="amount">
+                        ₹78,000
+                    </p>
+
+                    <p>
+                        MAXIMUM SUBSIDY
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- =================================================
+                 ELIGIBILITY
+                 ================================================= -->
+
+            <div class="eligibility-panel">
+
+                <div class="paper-fold"></div>
+
+
+                <div class="document-card">
+
+
+                    <!-- BLUE DOCUMENT HEADER -->
+
+                    <div class="document-header">
+
+                        <div class="document-icon">
+                            📄
+                        </div>
+
+                        <div>
+
+                            <h2>
+                                Eligibility
+                            </h2>
+
+                            <p>
+                                Requirements for subsidy
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- ELIGIBILITY CONTENT -->
+
+                    <div class="eligibility-content">
+
+
+                        <!-- 1 -->
+
+                        <div class="eligibility-item">
+
+                            <span>
+                                🇮🇳
+                            </span>
+
+                            <p>
+
+                                Must be an
+
+                                <strong>
+                                    Indian resident.
+                                </strong>
+
+                            </p>
+
+                        </div>
+
+
+
+                        <!-- 2 -->
+
+                        <div class="eligibility-item">
+
+                            <span>
+                                🏠
+                            </span>
+
+                            <p>
+
+                                The property must be
+
+                                <strong>
+                                    residential
+                                </strong>
+
+                                as commercial and industrial
+                                properties aren't eligible.
+
+                            </p>
+
+                        </div>
+
+
+
+                        <!-- 3 -->
+
+                        <div class="eligibility-item">
+
+                            <span>
+                                🔑
+                            </span>
+
+                            <p>
+
+                                Residents must have the
+
+                                <strong>
+                                    property ownership and roof rights.
+                                </strong>
+
+                            </p>
+
+                        </div>
+
+
+
+                        <!-- 4 -->
+
+                        <div class="eligibility-item">
+
+                            <span>
+                                ⚡
+                            </span>
+
+                            <p>
+
+                                You should have an
+
+                                <strong>
+                                    active DISCOM electricity connection.
+                                </strong>
+
+                            </p>
+
+                        </div>
+
+
+
+                        <!-- 5 -->
+
+                        <div class="eligibility-item">
+
+                            <span>
+                                ☀️
+                            </span>
+
+                            <p>
+
+                                You must have at least
+
+                                <strong>
+                                    80 sq. ft. of shadow-free rooftop space
+                                </strong>
+
+                                for a 1 kW solar system.
+
+                            </p>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
 
         </div>
 
-    </section>
-
-
-
-    <!-- =========================
-         CALCULATOR PAGE
-         ========================= -->
-
-    <div
-        id="calculatorPage"
-        style="display: none;">
-
-        <iframe
-            id="calculatorFrame"
-            src="calculator.html"
-            title="Solar Calculator"
-            scrolling="no"
-            style="
-                width: 100%;
-                height: auto;
-                border: none;
-                display: block;
-            ">
-        </iframe>
-
     </div>
 
 
 
-    <!-- =========================
-         SUBSIDY PAGE
-         ========================= -->
+    <!-- =====================================================
+         RIGHT COLUMN
+         COUNTDOWN + DOCUMENTS
+         ===================================================== -->
 
-    <div
-        id="subsidyPage"
-        style="display: none;">
+    <div class="right-column">
 
-        <iframe
-            id="subsidyFrame"
-            src="subsidy.html"
-            title="Solar Subsidy"
-            scrolling="yes"
-            style="
-                width:100%;
-                height:3000px;
-                border:none;
-                display:block;
-            ">
-        </iframe>
+
+        <!-- =========================
+             COUNTDOWN
+             ========================= -->
+
+        <div class="countdown-section">
+
+
+            <div class="countdown-title">
+                SCHEME ENDS IN
+            </div>
+
+
+
+            <!-- LARGE LIVE DAYS RING -->
+
+            <div
+                class="sun-ring"
+                id="sunRing"
+            >
+
+                <div class="sun-center">
+
+                    <span id="days">
+                        00
+                    </span>
+
+                    <small>
+                        DAYS
+                    </small>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- HOURS / MINUTES / SECONDS -->
+
+            <div class="small-countdown">
+
+
+                <div class="small-time">
+
+                    <span id="hours">
+                        00
+                    </span>
+
+                    <small>
+                        HOURS
+                    </small>
+
+                </div>
+
+
+                <div class="colon">
+                    :
+                </div>
+
+
+                <div class="small-time">
+
+                    <span id="minutes">
+                        00
+                    </span>
+
+                    <small>
+                        MINUTES
+                    </small>
+
+                </div>
+
+
+                <div class="colon">
+                    :
+                </div>
+
+
+                <div class="small-time">
+
+                    <span id="seconds">
+                        00
+                    </span>
+
+                    <small>
+                        SECONDS
+                    </small>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- HURRY UP -->
+
+            <div class="urgency">
+
+                <strong>
+                    🔥 HURRY UP! THIS SCHEME ENDS SOON
+                </strong>
+
+                <p>
+
+                    Apply before
+
+                    <b>
+                        31 March 2027
+                    </b>
+
+                </p>
+
+            </div>
+
+
+
+            <!-- IMPORTANT -->
+
+            <div class="subsidy-note">
+
+                <strong>
+                    Important:
+                </strong>
+
+                <p>
+
+                    Subsidy amounts shown above are based on the applicable
+                    rooftop solar subsidy structure. Actual eligibility and
+                    disbursement are subject to government scheme guidelines
+                    and conditions.
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- =================================================
+             DOCUMENTS
+             ================================================= -->
+
+        <div class="documents-section">
+
+
+            <div class="documents-title">
+
+                <span>
+                    📋
+                </span>
+
+                <h2>
+                    Documents Required
+                </h2>
+
+            </div>
+
+
+
+            <div class="document-list">
+
+
+                <!-- Aadhaar -->
+
+                <div class="document-item">
+
+                    <span class="doc-icon">
+                        🪪
+                    </span>
+
+                    <span>
+                        Aadhaar Card
+                    </span>
+
+                </div>
+
+
+
+                <!-- Electricity Bill -->
+
+                <div class="document-item">
+
+                    <span class="doc-icon">
+                        🧾
+                    </span>
+
+                    <span>
+                        Latest Electricity Bill
+                    </span>
+
+                </div>
+
+
+
+                <!-- Bank -->
+
+                <div class="document-item">
+
+                    <span class="doc-icon">
+                        🏦
+                    </span>
+
+                    <span>
+                        Bank Account Details
+                    </span>
+
+                </div>
+
+
+
+                <!-- Roof -->
+
+                <div class="document-item">
+
+                    <span class="doc-icon">
+                        🏠
+                    </span>
+
+                    <span>
+                        Roof Ownership Proof
+                    </span>
+
+                </div>
+
+
+
+                <!-- Photo -->
+
+                <div class="document-item">
+
+                    <span class="doc-icon">
+                        📷
+                    </span>
+
+                    <span>
+                        Passport Size Photo
+                    </span>
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
 
     </div>
 
 
+</div>
 
-    <!-- =========================
-         HOMES PAGE
-         ========================= -->
 
-    <div
-        id="homesPage"
-        style="display:none;">
 
-        <iframe
-            id="homesFrame"
-            src="homes.html"
-            title="Residential Solar"
-            scrolling="no"
-            style="
-                width: 100%;
-                height: 3000px;
-                border: none;
-                display: block;
-            ">
-        </iframe>
-
-    </div>
+<!-- =====================================================
+     JAVASCRIPT
+     ===================================================== -->
 
+<script>
 
-
-    <!-- =========================
-         COMMERCIAL PAGE
-         ========================= -->
-
-    <div
-        id="commercialPage"
-        style="display:none;">
-
-        <iframe
-            src="commercial.html"
-            title="Commercial Solar"
-            scrolling="no"
-            style="
-                width: 100%;
-                height: 3000px;
-                border: none;
-                display: block;
-            ">
-        </iframe>
-
-    </div>
+/* =====================================================
+   ACHIEVEMENT NUMBER ANIMATION
+   Starts ONLY when parent page opens Subsidy
+   ===================================================== */
 
+function startAchievementAnimation() {
 
-
-    <!-- =========================
-         INDUSTRIAL PAGE
-         ========================= -->
-
-    <div
-        id="industrialPage"
-        style="display:none;">
-
-        <iframe
-            src="industrial.html"
-            title="Industrial Solar"
-            scrolling="no"
-            style="
-                width: 100%;
-                height: 3000px;
-                border: none;
-                display: block;
-            ">
-        </iframe>
-
-    </div>
+    const counters =
+        document.querySelectorAll(".counter");
 
 
-
-    <!-- =========================
-         AGRICULTURE PAGE
-         ========================= -->
+    counters.forEach(function(counter) {
 
-    <div
-        id="agriculturePage"
-        style="display:none;">
+        const target =
+            Number(
+                counter.getAttribute("data-target")
+            );
 
-        <iframe
-            src="agriculture.html"
-            title="Agriculture Solar"
-            scrolling="no"
-            style="
-                width: 100%;
-                height: 3000px;
-                border: none;
-                display: block;
-            ">
-        </iframe>
 
-    </div>
+        const duration =
+            2000;
 
 
+        const startTime =
+            performance.now();
 
-    <!-- =========================
-         ON GRID PAGE
-         ========================= -->
 
-    <div
-        id="onGridPage"
-        style="display:none;">
+        counter.textContent =
+            "0";
 
-        <iframe
-            src="ongrid.html"
-            title="ON Grid Solar"
-            scrolling="no"
-            style="
-                width: 100%;
-                height: 3000px;
-                border: none;
-                display: block;
-            ">
-        </iframe>
 
-    </div>
+        function animateCounter(currentTime) {
 
+            const elapsed =
+                currentTime -
+                startTime;
 
 
-    <!-- =========================
-         OFF GRID PAGE
-         ========================= -->
+            const progress =
+                Math.min(
+                    elapsed / duration,
+                    1
+                );
 
-    <div
-        id="offGridPage"
-        style="display:none;">
 
-        <iframe
-            src="offgrid.html"
-            title="OFF Grid Solar"
-            scrolling="no"
-            style="
-                width: 100%;
-                height: 3000px;
-                border: none;
-                display: block;
-            ">
-        </iframe>
+            const easedProgress =
+                1 -
+                Math.pow(
+                    1 - progress,
+                    3
+                );
 
-    </div>
 
+            const currentValue =
+                Math.floor(
+                    target *
+                    easedProgress
+                );
 
 
-    <!-- =========================
-         HYBRID PAGE
-         ========================= -->
+            counter.textContent =
+                currentValue.toLocaleString(
+                    "en-IN"
+                );
 
-    <div
-        id="hybridPage"
-        style="display:none;">
 
-        <iframe
-            src="hybrid.html"
-            title="Hybrid Solar"
-            scrolling="no"
-            style="
-                width: 100%;
-                height: 3000px;
-                border: none;
-                display: block;
-            ">
-        </iframe>
+            if (progress < 1) {
 
-    </div>
-
-
-
-    <!-- =========================
-         JAVASCRIPT
-         ========================= -->
-
-    <script>
-
-
-        /* =========================
-           SLIDER
-           ========================= */
-
-        let currentSlide = 0;
-
-        const totalSlides = 6;
-
-        const slides =
-            document.getElementById("slides");
-
-        const dots =
-            document.querySelectorAll(".dot");
-
-
-        function showSlide(index) {
-
-            currentSlide = index;
-
-            slides.style.transform =
-                "translateX(-" +
-                (index * 100) +
-                "%)";
-
-            updateDots();
-
-        }
-
-
-        function updateDots() {
-
-            dots.forEach(function(dot, index) {
-
-                dot.classList.remove("active");
-
-                if (index === currentSlide) {
-
-                    dot.classList.add("active");
-
-                }
-
-            });
-
-        }
-
-
-
-        /* =========================
-           NEXT SLIDE
-           ========================= */
-
-        function nextSlide() {
-
-            currentSlide++;
-
-            slides.style.transition =
-                "transform 0.8s ease-in-out";
-
-            slides.style.transform =
-                "translateX(-" +
-                (currentSlide * 100) +
-                "%)";
-
-
-            if (currentSlide === totalSlides) {
-
-                setTimeout(function() {
-
-                    slides.style.transition = "none";
-
-                    currentSlide = 0;
-
-                    slides.style.transform =
-                        "translateX(0)";
-
-                }, 800);
-
-            }
-
-            updateDots();
-
-        }
-
-
-
-        /* =========================
-           PREVIOUS SLIDE
-           ========================= */
-
-        function previousSlide() {
-
-            if (currentSlide === 0) {
-
-                slides.style.transition = "none";
-
-                currentSlide = totalSlides;
-
-                slides.style.transform =
-                    "translateX(-" +
-                    (currentSlide * 100) +
-                    "%)";
-
-
-                setTimeout(function() {
-
-                    slides.style.transition =
-                        "transform 0.8s ease-in-out";
-
-                    currentSlide--;
-
-                    slides.style.transform =
-                        "translateX(-" +
-                        (currentSlide * 100) +
-                        "%)";
-
-                    updateDots();
-
-                }, 50);
+                requestAnimationFrame(
+                    animateCounter
+                );
 
             }
 
             else {
 
-                currentSlide--;
-
-                slides.style.transition =
-                    "transform 0.8s ease-in-out";
-
-                slides.style.transform =
-                    "translateX(-" +
-                    (currentSlide * 100) +
-                    "%)";
-
-                updateDots();
+                counter.textContent =
+                    target.toLocaleString(
+                        "en-IN"
+                    );
 
             }
 
         }
 
 
+        requestAnimationFrame(
+            animateCounter
+        );
 
-        /* =========================
-           AUTO SLIDE
-           ========================= */
+    });
 
-        let autoSlide =
-            setInterval(nextSlide, 4000);
-
-
-        function startAutoSlide() {
-
-            clearInterval(autoSlide);
-
-            autoSlide =
-                setInterval(nextSlide, 4000);
-
-        }
+}
 
 
+/* =====================================================
+   MAKE FUNCTION AVAILABLE TO PARENT
+   ===================================================== */
 
-        /* =========================
-           DOT CLICK
-           ========================= */
-
-        dots.forEach(function(dot, index) {
-
-            dot.addEventListener("click", function() {
-
-                clearInterval(autoSlide);
-
-                showSlide(index);
-
-                startAutoSlide();
-
-            });
-
-        });
+window.startAchievementAnimation =
+    startAchievementAnimation;
 
 
+/* =====================================================
+   RECEIVE COMMAND FROM vemron.html
+   ===================================================== */
 
-        /* =========================
-           CONSULTATION MODAL
-           ========================= */
+window.addEventListener(
+    "message",
+    function(event) {
 
-        function openConsultation() {
+        if (
+            event.data ===
+            "START_SUBSIDY_COUNTER"
+        ) {
 
-            document.getElementById(
-                "consultationModal"
-            ).style.display = "flex";
+            startAchievementAnimation();
 
         }
 
-
-        function closeConsultation() {
-
-            document.getElementById(
-                "consultationModal"
-            ).style.display = "none";
-
-        }
+    }
+);
 
 
 
-        /* =========================
-           KEYBOARD CONTROLS
-           ========================= */
+/* =====================================================
+   COUNTDOWN
+   ===================================================== */
 
-        document.addEventListener(
-            "keydown",
-            function(event) {
-
-                if (event.key === "ArrowRight") {
-
-                    clearInterval(autoSlide);
-
-                    nextSlide();
-
-                    startAutoSlide();
-
-                }
+const deadline =
+    new Date(
+        "2027-03-31T23:59:59+05:30"
+    ).getTime();
 
 
-                if (event.key === "ArrowLeft") {
+const schemeStart =
+    new Date(
+        "2026-04-01T00:00:00+05:30"
+    ).getTime();
 
-                    clearInterval(autoSlide);
 
-                    previousSlide();
+function updateCountdown() {
 
-                    startAutoSlide();
+    const now =
+        new Date().getTime();
 
-                }
 
-            }
+    const distance =
+        deadline -
+        now;
+
+
+    if (distance <= 0) {
+
+        document.getElementById(
+            "days"
+        ).textContent = "00";
+
+
+        document.getElementById(
+            "hours"
+        ).textContent = "00";
+
+
+        document.getElementById(
+            "minutes"
+        ).textContent = "00";
+
+
+        document.getElementById(
+            "seconds"
+        ).textContent = "00";
+
+
+        document.documentElement.style.setProperty(
+            "--progress",
+            "0%"
+        );
+
+
+        return;
+
+    }
+
+
+
+    const days =
+        Math.floor(
+            distance /
+            (1000 * 60 * 60 * 24)
         );
 
 
 
-        /* =========================
-           HEADER HEIGHT
-           ========================= */
-
-        function setHeaderHeight() {
-
-            const header =
-                document.querySelector("header");
-
-            if (header) {
-
-                document.documentElement.style
-                    .setProperty(
-                        "--header-height",
-                        header.offsetHeight + "px"
-                    );
-
-            }
-
-        }
-
-
-        window.addEventListener(
-            "load",
-            setHeaderHeight
-        );
-
-
-        window.addEventListener(
-            "resize",
-            setHeaderHeight
+    const hours =
+        Math.floor(
+            (
+                distance %
+                (1000 * 60 * 60 * 24)
+            ) /
+            (1000 * 60 * 60)
         );
 
 
 
-        /* =========================
-           AUTOMATIC IFRAME HEIGHT
-           CALCULATOR + SUBSIDY
-           ========================= */
-
-        function resizeIframe(frame) {
-
-            if (!frame) return;
-
-            try {
-
-                const frameDocument =
-                    frame.contentDocument ||
-                    frame.contentWindow.document;
-
-                const height = Math.max(
-                    frameDocument.body.scrollHeight,
-                    frameDocument.body.offsetHeight,
-                    frameDocument.documentElement.scrollHeight,
-                    frameDocument.documentElement.offsetHeight
-                );
-
-                frame.style.height =
-                    height + "px";
-
-            }
-
-            catch (error) {
-
-                console.log(
-                    "Could not resize iframe:",
-                    error
-                );
-
-            }
-
-        }
-
-
-
-        function setupAutoResize(frameId) {
-
-            const frame =
-                document.getElementById(frameId);
-
-            if (!frame) return;
-
-
-            frame.addEventListener(
-                "load",
-                function() {
-
-                    resizeIframe(frame);
-
-
-                    setTimeout(
-                        function() {
-                            resizeIframe(frame);
-                        },
-                        300
-                    );
-
-
-                    setTimeout(
-                        function() {
-                            resizeIframe(frame);
-                        },
-                        1000
-                    );
-
-
-                    setTimeout(
-                        function() {
-                            resizeIframe(frame);
-                        },
-                        2000
-                    );
-
-
-                    setTimeout(
-                        function() {
-                            resizeIframe(frame);
-                        },
-                        3000
-                    );
-
-
-                    try {
-
-                        const frameDocument =
-                            frame.contentDocument ||
-                            frame.contentWindow.document;
-
-                        if (
-                            typeof ResizeObserver !==
-                            "undefined"
-                        ) {
-
-                            const observer =
-                                new ResizeObserver(
-                                    function() {
-                                        resizeIframe(frame);
-                                    }
-                                );
-
-
-                            observer.observe(
-                                frameDocument.documentElement
-                            );
-
-
-                            if (frameDocument.body) {
-
-                                observer.observe(
-                                    frameDocument.body
-                                );
-
-                            }
-
-                        }
-
-                    }
-
-                    catch (error) {
-
-                        console.log(
-                            "ResizeObserver could not be attached:",
-                            error
-                        );
-
-                    }
-
-                }
-            );
-
-        }
-
-
-        setupAutoResize("calculatorFrame");
-
-        setupAutoResize("subsidyFrame");
-
-
-        window.addEventListener(
-            "resize",
-            function() {
-
-                resizeIframe(
-                    document.getElementById(
-                        "calculatorFrame"
-                    )
-                );
-
-                resizeIframe(
-                    document.getElementById(
-                        "subsidyFrame"
-                    )
-                );
-
-            }
+    const minutes =
+        Math.floor(
+            (
+                distance %
+                (1000 * 60 * 60)
+            ) /
+            (1000 * 60)
         );
 
 
 
-        /* =========================
-           OPEN CALCULATOR
-           ========================= */
-
-        function openCalculator() {
-
-            document.getElementById(
-                "homePage"
-            ).style.display = "none";
-
-
-            document.getElementById(
-                "subsidyPage"
-            ).style.display = "none";
-
-
-            document.getElementById(
-                "calculatorPage"
-            ).style.display = "block";
-
-
-            document.body.classList.remove(
-                "subsidy-open"
-            );
-
-
-            clearInterval(autoSlide);
-
-            window.scrollTo(0, 0);
-
-
-            setTimeout(function() {
-
-                resizeIframe(
-                    document.getElementById(
-                        "calculatorFrame"
-                    )
-                );
-
-            }, 100);
-
-        }
-
-
-
-        /* =========================
-           OPEN SUBSIDY
-           ========================= */
-
-        function openSubsidy() {
-
-            document.getElementById(
-                "homePage"
-            ).style.display = "none";
-
-            document.getElementById(
-                "calculatorPage"
-            ).style.display = "none";
-
-            document.getElementById(
-                "homesPage"
-            ).style.display = "none";
-
-            document.getElementById(
-                "commercialPage"
-            ).style.display = "none";
-
-            document.getElementById(
-                "industrialPage"
-            ).style.display = "none";
-
-            document.getElementById(
-                "agriculturePage"
-            ).style.display = "none";
-
-            document.getElementById(
-                "onGridPage"
-            ).style.display = "none";
-
-            document.getElementById(
-                "offGridPage"
-            ).style.display = "none";
-
-            document.getElementById(
-                "hybridPage"
-            ).style.display = "none";
-
-
-            const subsidyPage =
-                document.getElementById(
-                    "subsidyPage"
-                );
-
-
-            subsidyPage.style.display =
-                "block";
-
-
-            document.body.classList.add(
-                "subsidy-open"
-            );
-
-
-            setHeaderHeight();
-
-            clearInterval(autoSlide);
-
-            window.scrollTo(0, 0);
-
-
-            /* =========================
-               START SUBSIDY COUNTER
-               ========================= */
-
-            const subsidyFrame =
-                document.getElementById(
-                    "subsidyFrame"
-                );
-
-
-            if (!subsidyFrame) {
-                return;
-            }
-
-
-            function startAnimation() {
-
-                if (
-                    subsidyFrame.contentWindow
-                ) {
-
-                    subsidyFrame.contentWindow.postMessage(
-                        "START_SUBSIDY_COUNTER",
-                        "*"
-                    );
-
-                }
-
-            }
-
-
-            try {
-
-                if (
-                    subsidyFrame.contentDocument &&
-                    subsidyFrame.contentDocument.readyState ===
-                    "complete"
-                ) {
-
-                    startAnimation();
-
-                }
-
-                else {
-
-                    subsidyFrame.addEventListener(
-                        "load",
-                        startAnimation,
-                        {
-                            once: true
-                        }
-                    );
-
-                }
-
-            }
-
-            catch (error) {
-
-                subsidyFrame.addEventListener(
-                    "load",
-                    startAnimation,
-                    {
-                        once: true
-                    }
-                );
-
-            }
-
-
-            setTimeout(
-                startAnimation,
-                100
-            );
-
-            setTimeout(
-                startAnimation,
-                500
-            );
-
-        }
-
-
-
-        /* =========================
-           OPEN HOMES
-           ========================= */
-
-        function openHomes() {
-
-            document.getElementById("homePage")
-                .style.display = "none";
-
-            document.getElementById("calculatorPage")
-                .style.display = "none";
-
-            document.getElementById("subsidyPage")
-                .style.display = "none";
-
-            document.getElementById("homesPage")
-                .style.display = "block";
-
-            clearInterval(autoSlide);
-
-            window.scrollTo(0, 0);
-
-        }
-
-
-
-        /* =========================
-           OPEN COMMERCIAL
-           ========================= */
-
-        function openCommercial() {
-
-            document.getElementById("homePage")
-                .style.display = "none";
-
-            document.getElementById("calculatorPage")
-                .style.display = "none";
-
-            document.getElementById("subsidyPage")
-                .style.display = "none";
-
-            document.getElementById("homesPage")
-                .style.display = "none";
-
-            document.getElementById("commercialPage")
-                .style.display = "block";
-
-            clearInterval(autoSlide);
-
-            window.scrollTo(0, 0);
-
-        }
-
-
-
-        /* =========================
-           OPEN INDUSTRIAL
-           ========================= */
-
-        function openIndustrial() {
-
-            document.getElementById("homePage")
-                .style.display = "none";
-
-            document.getElementById("calculatorPage")
-                .style.display = "none";
-
-            document.getElementById("subsidyPage")
-                .style.display = "none";
-
-            document.getElementById("homesPage")
-                .style.display = "none";
-
-            document.getElementById("commercialPage")
-                .style.display = "none";
-
-            document.getElementById("industrialPage")
-                .style.display = "block";
-
-            clearInterval(autoSlide);
-
-            window.scrollTo(0, 0);
-
-        }
-
-
-
-        /* =========================
-           OPEN AGRICULTURE
-           ========================= */
-
-        function openAgriculture() {
-
-            document.getElementById("homePage")
-                .style.display = "none";
-
-            document.getElementById("calculatorPage")
-                .style.display = "none";
-
-            document.getElementById("subsidyPage")
-                .style.display = "none";
-
-            document.getElementById("homesPage")
-                .style.display = "none";
-
-            document.getElementById("commercialPage")
-                .style.display = "none";
-
-            document.getElementById("industrialPage")
-                .style.display = "none";
-
-            document.getElementById("agriculturePage")
-                .style.display = "block";
-
-            clearInterval(autoSlide);
-
-            window.scrollTo(0, 0);
-
-        }
-
-
-
-        /* =========================
-           OPEN ON GRID
-           ========================= */
-
-        function openOnGrid() {
-
-            document.getElementById("homePage")
-                .style.display = "none";
-
-            document.getElementById("calculatorPage")
-                .style.display = "none";
-
-            document.getElementById("subsidyPage")
-                .style.display = "none";
-
-            document.getElementById("homesPage")
-                .style.display = "none";
-
-            document.getElementById("commercialPage")
-                .style.display = "none";
-
-            document.getElementById("industrialPage")
-                .style.display = "none";
-
-            document.getElementById("agriculturePage")
-                .style.display = "none";
-
-            document.getElementById("offGridPage")
-                .style.display = "none";
-
-            document.getElementById("hybridPage")
-                .style.display = "none";
-
-            document.getElementById("onGridPage")
-                .style.display = "block";
-
-            clearInterval(autoSlide);
-
-            window.scrollTo(0, 0);
-
-        }
-
-
-
-        /* =========================
-           OPEN OFF GRID
-           ========================= */
-
-        function openOffGrid() {
-
-            document.getElementById("homePage")
-                .style.display = "none";
-
-            document.getElementById("calculatorPage")
-                .style.display = "none";
-
-            document.getElementById("subsidyPage")
-                .style.display = "none";
-
-            document.getElementById("homesPage")
-                .style.display = "none";
-
-            document.getElementById("commercialPage")
-                .style.display = "none";
-
-            document.getElementById("industrialPage")
-                .style.display = "none";
-
-            document.getElementById("agriculturePage")
-                .style.display = "none";
-
-            document.getElementById("onGridPage")
-                .style.display = "none";
-
-            document.getElementById("hybridPage")
-                .style.display = "none";
-
-            document.getElementById("offGridPage")
-                .style.display = "block";
-
-            clearInterval(autoSlide);
-
-            window.scrollTo(0, 0);
-
-        }
-
-
-
-        /* =========================
-           OPEN HYBRID
-           ========================= */
-
-        function openHybrid() {
-
-            document.getElementById("homePage")
-                .style.display = "none";
-
-            document.getElementById("calculatorPage")
-                .style.display = "none";
-
-            document.getElementById("subsidyPage")
-                .style.display = "none";
-
-            document.getElementById("homesPage")
-                .style.display = "none";
-
-            document.getElementById("commercialPage")
-                .style.display = "none";
-
-            document.getElementById("industrialPage")
-                .style.display = "none";
-
-            document.getElementById("agriculturePage")
-                .style.display = "none";
-
-            document.getElementById("onGridPage")
-                .style.display = "none";
-
-            document.getElementById("offGridPage")
-                .style.display = "none";
-
-            document.getElementById("hybridPage")
-                .style.display = "block";
-
-            clearInterval(autoSlide);
-
-            window.scrollTo(0, 0);
-
-        }
-
-
-
-        /* =========================
-           RETURN TO HOME
-           ========================= */
-
-        function openHome() {
-
-            document.getElementById("calculatorPage")
-                .style.display = "none";
-
-            document.getElementById("subsidyPage")
-                .style.display = "none";
-
-            document.getElementById("homesPage")
-                .style.display = "none";
-
-            document.getElementById("commercialPage")
-                .style.display = "none";
-
-            document.getElementById("industrialPage")
-                .style.display = "none";
-
-            document.getElementById("agriculturePage")
-                .style.display = "none";
-
-            document.getElementById("onGridPage")
-                .style.display = "none";
-
-            document.getElementById("offGridPage")
-                .style.display = "none";
-
-            document.getElementById("hybridPage")
-                .style.display = "none";
-
-            document.getElementById("homePage")
-                .style.display = "block";
-
-
-            document.body.classList.remove(
-                "subsidy-open"
-            );
-
-
-            startAutoSlide();
-
-            window.scrollTo(0, 0);
-
-        }
-
-
-
-        /* =========================
-           MOBILE MENU
-           ========================= */
-
-        function toggleMobileMenu() {
-
-            const nav =
-                document.querySelector(
-                    "header nav"
-                );
-
-            if (!nav) return;
-
-            nav.classList.toggle(
-                "mobile-menu-open"
-            );
-
-        }
-
-
-
-        /* =========================
-           MOBILE DROPDOWNS
-           ========================= */
-
-        document.addEventListener(
-            "DOMContentLoaded",
-            function () {
-
-                const dropdowns =
-                    document.querySelectorAll(
-                        "header nav .dropdown"
-                    );
-
-
-                dropdowns.forEach(
-                    function (dropdown) {
-
-                        const mainLink =
-                            dropdown.querySelector(
-                                ":scope > a"
-                            );
-
-
-                        if (!mainLink) return;
-
-
-                        mainLink.addEventListener(
-                            "click",
-                            function (event) {
-
-                                if (
-                                    window.innerWidth <=
-                                    768
-                                ) {
-
-                                    event.preventDefault();
-
-                                    dropdown.classList.toggle(
-                                        "mobile-dropdown-open"
-                                    );
-
-                                }
-
-                            }
-                        );
-
-                    }
-                );
-
-            }
+    const seconds =
+        Math.floor(
+            (
+                distance %
+                (1000 * 60)
+            ) /
+            1000
         );
 
 
 
-        /* =====================================================
-           MOBILE MENU
-           ===================================================== */
-
-        function toggleMobileMenu() {
-
-            const nav =
-                document.querySelector(
-                    "header nav"
-                );
-
-            const button =
-                document.querySelector(
-                    ".menu-toggle"
-                );
-
-
-            if (!nav) return;
-
-
-            nav.classList.toggle(
-                "mobile-menu-open"
-            );
-
-
-            if (button) {
-
-                button.textContent =
-                    nav.classList.contains(
-                        "mobile-menu-open"
-                    )
-                        ? "✕"
-                        : "☰";
-
-            }
-
-        }
-
-
-
-        /* =====================================================
-           CLOSE MOBILE MENU
-           ===================================================== */
-
-        function closeMobileMenu() {
-
-            const nav =
-                document.querySelector(
-                    "header nav"
-                );
-
-            const button =
-                document.querySelector(
-                    ".menu-toggle"
-                );
-
-
-            if (!nav) return;
-
-
-            nav.classList.remove(
-                "mobile-menu-open"
-            );
-
-
-            document.querySelectorAll(
-                "header nav .dropdown"
-            ).forEach(
-                function(dropdown) {
-
-                    dropdown.classList.remove(
-                        "mobile-dropdown-open"
-                    );
-
-                }
-            );
-
-
-            if (button) {
-
-                button.textContent = "☰";
-
-            }
-
-        }
-
-
-
-        /* =====================================================
-           MOBILE DROPDOWNS
-           ONLY ONE DROPDOWN OPEN AT A TIME
-           ===================================================== */
-
-        document.addEventListener(
-            "DOMContentLoaded",
-            function() {
-
-                const dropdowns =
-                    document.querySelectorAll(
-                        "header nav .dropdown"
-                    );
-
-
-                dropdowns.forEach(
-                    function(dropdown) {
-
-                        const link =
-                            dropdown.querySelector(
-                                ":scope > a"
-                            );
-
-
-                        if (!link) return;
-
-
-                        link.addEventListener(
-                            "click",
-                            function(event) {
-
-                                if (
-                                    window.innerWidth <=
-                                    768
-                                ) {
-
-                                    event.preventDefault();
-
-
-                                    /* Close every other dropdown */
-
-                                    dropdowns.forEach(
-                                        function(
-                                            otherDropdown
-                                        ) {
-
-                                            if (
-                                                otherDropdown !==
-                                                dropdown
-                                            ) {
-
-                                                otherDropdown.classList.remove(
-                                                    "mobile-dropdown-open"
-                                                );
-
-                                            }
-
-                                        }
-                                    );
-
-
-                                    /* Toggle current dropdown */
-
-                                    dropdown.classList.toggle(
-                                        "mobile-dropdown-open"
-                                    );
-
-                                }
-
-                            }
-                        );
-
-                    }
-                );
-
-
-
-                /* Close menu when normal navigation item is clicked */
-
-                document.querySelectorAll(
-                    "header nav > a"
-                ).forEach(
-                    function(link) {
-
-                        link.addEventListener(
-                            "click",
-                            function() {
-
-                                if (
-                                    window.innerWidth <=
-                                    768
-                                ) {
-
-                                    closeMobileMenu();
-
-                                }
-
-                            }
-                        );
-
-                    }
-                );
-
-
-
-                /* Close menu when submenu item is clicked */
-
-                document.querySelectorAll(
-                    "header nav .dropdown-menu a"
-                ).forEach(
-                    function(link) {
-
-                        link.addEventListener(
-                            "click",
-                            function() {
-
-                                if (
-                                    window.innerWidth <=
-                                    768
-                                ) {
-
-                                    closeMobileMenu();
-
-                                }
-
-                            }
-                        );
-
-                    }
-                );
-
-
-
-                /* Close when clicking outside */
-
-                document.addEventListener(
-                    "click",
-                    function(event) {
-
-                        if (
-                            window.innerWidth >
-                            768
-                        ) {
-                            return;
-                        }
-
-
-                        const nav =
-                            document.querySelector(
-                                "header nav"
-                            );
-
-
-                        const button =
-                            document.querySelector(
-                                ".menu-toggle"
-                            );
-
-
-                        if (!nav) return;
-
-
-                        if (
-                            nav.classList.contains(
-                                "mobile-menu-open"
-                            ) &&
-                            !nav.contains(
-                                event.target
-                            ) &&
-                            !button.contains(
-                                event.target
-                            )
-                        ) {
-
-                            closeMobileMenu();
-
-                        }
-
-                    }
-                );
-
-
-
-                /* ESC closes menu */
-
-                document.addEventListener(
-                    "keydown",
-                    function(event) {
-
-                        if (
-                            event.key ===
-                            "Escape"
-                        ) {
-
-                            closeMobileMenu();
-
-                        }
-
-                    }
-                );
-
-            }
+    document.getElementById(
+        "days"
+    ).textContent =
+        String(days).padStart(
+            2,
+            "0"
         );
 
-    </script>
 
 
+    document.getElementById(
+        "hours"
+    ).textContent =
+        String(hours).padStart(
+            2,
+            "0"
+        );
 
-    <!-- =========================
-         CONSULTATION MODAL
-         ========================= -->
 
-    <div
-        id="consultationModal"
-        class="consultation-modal">
 
+    document.getElementById(
+        "minutes"
+    ).textContent =
+        String(minutes).padStart(
+            2,
+            "0"
+        );
 
-        <div class="consultation-box">
 
 
-            <button
-                class="close-btn"
-                onclick="closeConsultation()">
+    document.getElementById(
+        "seconds"
+    ).textContent =
+        String(seconds).padStart(
+            2,
+            "0"
+        );
 
-                &times;
 
-            </button>
 
+    const totalDuration =
+        deadline -
+        schemeStart;
 
-            <h2>
-                Get Free Consultation
-            </h2>
 
+    const remaining =
+        deadline -
+        now;
 
-            <p>
-                Fill in your details and our team
-                will get in touch with you.
-            </p>
 
-
-
-            <!-- NAME -->
-
-            <label for="name">
-                Full Name
-            </label>
-
-            <input
-                type="text"
-                id="name"
-                placeholder="Enter your full name">
-
-
-
-            <!-- EMAIL -->
-
-            <label for="email">
-                Email ID
-            </label>
-
-            <input
-                type="email"
-                id="email"
-                placeholder="Enter your email">
-
-
-
-            <!-- PHONE -->
-
-            <label for="phone">
-                Phone Number
-            </label>
-
-            <div class="phone-otp-row">
-
-                <input
-                    type="tel"
-                    id="phone"
-                    placeholder="Enter your phone number"
-                    maxlength="10"
-                    inputmode="numeric">
-
-                <button
-                    type="button"
-                    id="getOtpBtn"
-                    onclick="getOTP()">
-
-                    Get OTP
-
-                </button>
-
-            </div>
-
-
-
-            <!-- OTP -->
-
-            <div
-                id="otpSection"
-                style="display: none;">
-
-                <label for="otp">
-                    Enter OTP
-                </label>
-
-                <div class="otp-row">
-
-                    <input
-                        type="text"
-                        id="otp"
-                        placeholder="Enter OTP"
-                        maxlength="4"
-                        inputmode="numeric">
-
-                    <button
-                        type="button"
-                        id="verifyOtpBtn"
-                        onclick="verifyOTP()">
-
-                        Verify
-
-                    </button>
-
-                </div>
-
-                <p id="otpMessage"></p>
-
-            </div>
-
-
-
-            <!-- PINCODE -->
-
-            <label for="pincode">
-                Pincode
-            </label>
-
-            <input
-                type="text"
-                id="pincode"
-                name="pincode"
-                placeholder="Enter your pincode"
-                maxlength="6"
-                pattern="[0-9]{6}"
-                inputmode="numeric"
-                required>
-
-
-
-            <!-- ELECTRICITY BILL -->
-
-            <label for="bill">
-                Monthly Electricity Bill
-            </label>
-
-            <input
-                type="number"
-                id="bill"
-                placeholder="Enter monthly electricity bill">
-
-
-
-            <!-- SUBMIT -->
-
-            <button
-                class="submit-btn"
-                type="button"
-                onclick="submitConsultation()">
-
-                Submit Request
-
-            </button>
-
-
-        </div>
-
-    </div>
-
-
-
-    <!-- =========================
-         MSG91 OTP
-         ========================= -->
-
-    <script>
-
-        var configuration = {
-
-            widgetId:
-                "36696d6d6852333035303438",
-
-            tokenAuth:
-                "569497T1Ml7t54xwS6aa19371P1",
-
-            identifier: "",
-
-            exposeMethods: true,
-
-            captchaRenderId: "",
-
-            success: (data) => {
-
-                console.log(
-                    "MSG91 success:",
-                    data
-                );
-
-            },
-
-            failure: (error) => {
-
-                console.log(
-                    "MSG91 error:",
-                    error
-                );
-
-            }
-
-        };
-
-    </script>
-
-
-    <script
-        type="text/javascript"
-        onload="initSendOTP(configuration)"
-        src="https://verify.msg91.com/otp-provider.js">
-    </script>
-
-
-
-    <!-- =========================
-         FORM VALIDATION + OTP
-         ========================= -->
-
-    <script>
-
-
-        // NAME - only letters and spaces
-
-        document.getElementById("name")
-            .addEventListener(
-                "input",
-                function () {
-
-                    this.value =
-                        this.value.replace(
-                            /[^A-Za-z\s]/g,
-                            ""
-                        );
-
-                }
-            );
-
-
-
-        // PHONE - only numbers, maximum 10 digits
-
-        document.getElementById("phone")
-            .addEventListener(
-                "input",
-                function () {
-
-                    this.value =
-                        this.value
-                            .replace(
-                                /\D/g,
-                                ""
-                            )
-                            .slice(
-                                0,
-                                10
-                            );
-
-                }
-            );
-
-
-
-        // PINCODE - only numbers, maximum 6 digits
-
-        document.getElementById("pincode")
-            .addEventListener(
-                "input",
-                function () {
-
-                    this.value =
-                        this.value
-                            .replace(
-                                /\D/g,
-                                ""
-                            )
-                            .slice(
-                                0,
-                                6
-                            );
-
-                }
-            );
-
-
-
-        // =============================
-        // OTP
-        // =============================
-
-        function getOTP() {
-
-            const phone =
-                document.getElementById(
-                    "phone"
-                ).value;
-
-
-            const otpSection =
-                document.getElementById(
-                    "otpSection"
-                );
-
-
-            const otpMessage =
-                document.getElementById(
-                    "otpMessage"
-                );
-
-
-            if (
-                phone.length !== 10
-            ) {
-
-                alert(
-                    "Please enter a valid 10-digit phone number."
-                );
-
-                return;
-
-            }
-
-
-            if (
-                typeof sendOtp !==
-                "function"
-            ) {
-
-                alert(
-                    "MSG91 OTP service has not loaded."
-                );
-
-                console.log(
-                    "sendOtp function is not available"
-                );
-
-                return;
-
-            }
-
-
-            const identifier =
-                "91" + phone;
-
-
-            console.log(
-                "Sending OTP to:",
-                identifier
-            );
-
-
-            sendOtp(
-
-                identifier,
-
-                function (data) {
-
-                    console.log(
-                        "OTP sent successfully:",
-                        data
-                    );
-
-
-                    otpSection.style.display =
-                        "block";
-
-
-                    otpMessage.textContent =
-                        "OTP sent successfully.";
-
-
-                    otpMessage.style.color =
-                        "#234";
-
-                },
-
-
-                function (error) {
-
-                    console.log(
-                        "OTP sending failed:",
-                        error
-                    );
-
-
-                    otpMessage.textContent =
-                        "Failed to send OTP.";
-
-
-                    otpMessage.style.color =
-                        "red";
-
-                }
-
-            );
-
-        }
-
-
-
-        function verifyOTP() {
-
-            const otp =
-                document.getElementById(
-                    "otp"
-                ).value;
-
-
-            const otpMessage =
-                document.getElementById(
-                    "otpMessage"
-                );
-
-
-            if (
-                otp.length !== 4
-            ) {
-
-                otpMessage.textContent =
-                    "Please enter the 4-digit OTP.";
-
-                otpMessage.style.color =
-                    "red";
-
-                return;
-
-            }
-
-
-            window.verifyOtp(
-
-                otp,
-
-                function (data) {
-
-                    console.log(
-                        "OTP verified:",
-                        data
-                    );
-
-
-                    otpMessage.textContent =
-                        "✓ Phone number verified successfully!";
-
-
-                    otpMessage.style.color =
-                        "#1b8f3a";
-
-
-                    document.getElementById(
-                        "phone"
-                    ).disabled = true;
-
-
-                    document.getElementById(
-                        "getOtpBtn"
-                    ).disabled = true;
-
-
-                    document.getElementById(
-                        "otp"
-                    ).disabled = true;
-
-
-                    document.getElementById(
-                        "verifyOtpBtn"
-                    ).disabled = true;
-
-                },
-
-
-                function (error) {
-
-                    console.log(
-                        "Verification error:",
-                        error
-                    );
-
-
-                    otpMessage.textContent =
-                        "Invalid OTP. Please try again.";
-
-
-                    otpMessage.style.color =
-                        "red";
-
-                }
-
-            );
-
-        }
-
-
-
-        // =============================
-        // CONSULTATION SUBMIT
-        // =============================
-
-        function submitConsultation() {
-
-            const name =
-                document.getElementById(
-                    "name"
-                ).value.trim();
-
-
-            const email =
-                document.getElementById(
-                    "email"
-                ).value.trim();
-
-
-            const phone =
-                document.getElementById(
-                    "phone"
-                ).value.trim();
-
-
-            const pincode =
-                document.getElementById(
-                    "pincode"
-                ).value.trim();
-
-
-            const bill =
-                document.getElementById(
-                    "bill"
-                ).value.trim();
-
-
-            if (
-                !name ||
-                !email ||
-                !phone ||
-                !pincode ||
-                !bill
-            ) {
-
-                alert(
-                    "Please fill in all the details."
-                );
-
-                return;
-
-            }
-
-
-            if (
-                document.getElementById(
-                    "phone"
-                ).disabled !== true
-            ) {
-
-                alert(
-                    "Please verify your phone number with OTP first."
-                );
-
-                return;
-
-            }
-
-
-            const templateParams = {
-
-                name: name,
-
-                email: email,
-
-                phone: phone,
-
-                pincode: pincode,
-
-                bill: bill
-
-            };
-
-
-            console.log(
-                "STEP 1: Sending customer email..."
-            );
-
-
-            emailjs.send(
-
-                "service_oonozha",
-
-                "template_0b16cta",
-
-                templateParams
-
+    const progress =
+        Math.max(
+            0,
+            Math.min(
+                100,
+                (
+                    remaining /
+                    totalDuration
+                ) * 100
             )
-
-            .then(
-                function (response) {
-
-                    console.log(
-                        "STEP 2: Customer email sent:",
-                        response
-                    );
+        );
 
 
-                    console.log(
-                        "STEP 3: Sending business email..."
-                    );
+    document.documentElement.style.setProperty(
+        "--progress",
+        progress + "%"
+    );
+
+}
 
 
-                    return emailjs.send(
-
-                        "service_oonozha",
-
-                        "template_gp51hw6",
-
-                        templateParams
-
-                    );
-
-                }
-            )
-
-            .then(
-                function (response) {
-
-                    console.log(
-                        "STEP 4: Business email sent:",
-                        response
-                    );
+updateCountdown();
 
 
-                    alert(
-                        "Thank you! Your consultation request has been submitted successfully."
-                    );
+setInterval(
+    updateCountdown,
+    1000
+);
 
-
-                    closeConsultation();
-
-                }
-            )
-
-            .catch(
-                function (error) {
-
-                    console.error(
-                        "EMAIL ERROR:",
-                        error
-                    );
-
-
-                    console.error(
-                        "ERROR STATUS:",
-                        error.status
-                    );
-
-
-                    console.error(
-                        "ERROR TEXT:",
-                        error.text
-                    );
-
-
-                    alert(
-                        "Email sending failed. Please check the console."
-                    );
-
-                }
-            );
-
-        }
-
-
-    </script>
+</script>
 
 
 </body>
