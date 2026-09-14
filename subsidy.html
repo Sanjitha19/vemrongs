@@ -668,7 +668,6 @@
 /* =====================================================
    ACHIEVEMENT NUMBER ANIMATION
    ===================================================== */
-
 function startAchievementAnimation() {
 
     const counters =
@@ -677,9 +676,7 @@ function startAchievementAnimation() {
     counters.forEach(function(counter) {
 
         const target =
-            Number(
-                counter.getAttribute("data-target")
-            );
+            Number(counter.getAttribute("data-target"));
 
         const duration = 2000;
 
@@ -694,27 +691,16 @@ function startAchievementAnimation() {
                 currentTime - startTime;
 
             const progress =
-                Math.min(
-                    elapsed / duration,
-                    1
-                );
+                Math.min(elapsed / duration, 1);
 
             const easedProgress =
-                1 -
-                Math.pow(
-                    1 - progress,
-                    3
-                );
+                1 - Math.pow(1 - progress, 3);
 
             const currentValue =
-                Math.floor(
-                    target * easedProgress
-                );
+                Math.floor(target * easedProgress);
 
             counter.textContent =
-                currentValue.toLocaleString(
-                    "en-IN"
-                );
+                currentValue.toLocaleString("en-IN");
 
             if (progress < 1) {
 
@@ -725,12 +711,9 @@ function startAchievementAnimation() {
             } else {
 
                 counter.textContent =
-                    target.toLocaleString(
-                        "en-IN"
-                    );
+                    target.toLocaleString("en-IN");
 
             }
-
         }
 
         requestAnimationFrame(
@@ -738,29 +721,10 @@ function startAchievementAnimation() {
         );
 
     });
-
 }
 
-
-/* =====================================================
-   RECEIVE MESSAGE FROM VEMRON.HTML
-   ===================================================== */
-
-window.addEventListener(
-    "message",
-    function(event) {
-
-        if (
-            event.data ===
-            "START_SUBSIDY_COUNTER"
-        ) {
-
-            startAchievementAnimation();
-
-        }
-
-    }
-);
+window.startAchievementAnimation =
+    startAchievementAnimation;
 
 
 /* =====================================================
