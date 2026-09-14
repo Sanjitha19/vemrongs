@@ -666,38 +666,59 @@
    Starts ONLY when parent page opens Subsidy
    ===================================================== */
 
+<script>
+
+/* =====================================================
+   ACHIEVEMENT NUMBER ANIMATION
+   ===================================================== */
+
 function startAchievementAnimation() {
 
-    const counters = document.querySelectorAll(".counter");
+    const counters =
+        document.querySelectorAll(".counter");
 
     counters.forEach(function(counter) {
 
-        const target = Number(
-            counter.getAttribute("data-target")
-        );
+        const target =
+            Number(
+                counter.getAttribute("data-target")
+            );
 
         const duration = 2000;
-        const startTime = performance.now();
+
+        const startTime =
+            performance.now();
 
         counter.textContent = "0";
 
+
         function animateCounter(currentTime) {
 
-            const elapsed = currentTime - startTime;
+            const elapsed =
+                currentTime - startTime;
 
-            const progress = Math.min(
-                elapsed / duration,
-                1
-            );
+            const progress =
+                Math.min(
+                    elapsed / duration,
+                    1
+                );
 
             const easedProgress =
-                1 - Math.pow(1 - progress, 3);
+                1 -
+                Math.pow(
+                    1 - progress,
+                    3
+                );
 
             const currentValue =
-                Math.floor(target * easedProgress);
+                Math.floor(
+                    target * easedProgress
+                );
+
 
             counter.textContent =
                 currentValue.toLocaleString("en-IN");
+
 
             if (progress < 1) {
 
@@ -711,33 +732,45 @@ function startAchievementAnimation() {
                     target.toLocaleString("en-IN");
 
             }
+
         }
+
 
         requestAnimationFrame(
             animateCounter
         );
+
     });
+
 }
 
 
-/* Make function available to parent iframe communication */
+/* Make function available */
+
 window.startAchievementAnimation =
     startAchievementAnimation;
 
 
 /* =====================================================
-   START ONLY WHEN PARENT CLICKS SUBSIDY
+   RECEIVE COMMAND FROM vemron.html
    ===================================================== */
 
-window.addEventListener("message", function(event) {
+window.addEventListener(
+    "message",
+    function(event) {
 
-    if (event.data === "START_SUBSIDY_COUNTER") {
+        if (
+            event.data ===
+            "START_SUBSIDY_COUNTER"
+        ) {
 
-        startAchievementAnimation();
+            startAchievementAnimation();
+
+        }
 
     }
+);
 
-});
 
 
 /* =====================================================
