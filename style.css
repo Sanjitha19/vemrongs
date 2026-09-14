@@ -335,44 +335,6 @@ nav > a:hover,
 }
 
 
-/* =====================================================
-   SUBSIDY PAGE SCROLL FIX
-   ===================================================== */
-
-/*
-   When Subsidy is open:
-   - The MAIN Home page does not scroll.
-   - The header remains visible.
-   - Only the Subsidy iframe area scrolls.
-*/
-
-body.subsidy-open {
-    overflow: hidden;
-}
-
-
-/*
-   Subsidy container occupies only the space
-   BELOW the existing header.
-*/
-
-#subsidyPage {
-    width: 100%;
-    height: calc(100vh - var(--header-height));
-    overflow: hidden;
-}
-
-
-/*
-   Subsidy iframe fills the available area.
-*/
-
-#subsidyPage iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
-    display: block;
-}
 /* ============================= */
 /* PHONE + OTP SECTION */
 /* ============================= */
@@ -453,17 +415,24 @@ body.subsidy-open {
 }
 
 
-/* =====================================================
-   MOBILE NAVIGATION
-   ===================================================== */
 
+#subsidyPage {
+    width: 100%;
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+}
+
+#subsidyPage iframe {
+    width: 100%;
+    min-height: 3000px;
+    height: 3000px;
+    border: none;
+    display: block;
+    overflow: hidden;
+}
 @media (max-width: 768px) {
 
-    header {
-        position: relative;
-    }
-
-    /* Hamburger button */
     .menu-toggle {
         display: flex;
         align-items: center;
@@ -472,100 +441,116 @@ body.subsidy-open {
         width: 44px;
         height: 44px;
 
+        margin-left: auto;
+        padding: 0;
+
         border: none;
         background: transparent;
 
         font-size: 30px;
+        line-height: 1;
+
         cursor: pointer;
 
-        padding: 0;
-        margin-left: auto;
-
-        z-index: 1001;
+        z-index: 10001;
     }
 
-    /* Mobile navigation */
+    header {
+        position: relative;
+    }
+
     header nav {
         display: none;
 
         position: absolute;
 
         top: 100%;
-        left: 0;
-        right: 0;
+        left: 0 !important;
 
-        width: 100%;
+        width: 100% !important;
+        max-width: 100% !important;
+
+        box-sizing: border-box;
 
         flex-direction: column;
         align-items: stretch;
 
+        margin: 0 !important;
+        padding: 8px 0;
+
         background: white;
 
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+        z-index: 10000;
 
-        z-index: 1000;
+        overflow-x: hidden;
 
-        padding: 10px 0;
+        box-shadow:
+            0 8px 20px rgba(0, 0, 0, 0.12);
+
+        transform: none !important;
     }
 
-    /* Open menu */
     header nav.mobile-menu-open {
         display: flex;
     }
 
-    /* Main menu items */
     header nav > a,
     header nav > .dropdown > a {
-        width: 100%;
 
-        padding: 14px 22px;
+        width: 100%;
+        box-sizing: border-box;
 
         display: flex;
         align-items: center;
         justify-content: space-between;
 
-        text-decoration: none;
+        padding: 15px 22px;
+
+        margin: 0;
+
+        white-space: normal;
     }
 
-    /* Dropdown containers */
     header nav .dropdown {
         width: 100%;
+        box-sizing: border-box;
     }
 
-    /* Dropdown menus on mobile */
     header nav .dropdown-menu {
-        position: static;
 
         display: none;
 
-        width: 100%;
+        position: static;
 
-        box-shadow: none;
+        width: 100%;
+        max-width: 100%;
+
+        box-sizing: border-box;
+
+        margin: 0;
+        padding: 0;
 
         background: #f7f7f7;
 
-        padding: 0;
+        box-shadow: none;
     }
 
-    /* Show dropdown when opened */
-    header nav .dropdown.mobile-dropdown-open .dropdown-menu {
+    header nav .dropdown.mobile-dropdown-open
+    .dropdown-menu {
         display: block;
     }
 
-    /* Dropdown submenu items */
     header nav .dropdown-menu a {
+
         display: block;
 
         width: 100%;
+        box-sizing: border-box;
 
         padding: 12px 42px;
 
-        text-decoration: none;
-    }
+        margin: 0;
 
-    /* Keep arrow visible */
-    header nav .arrow {
-        margin-left: 8px;
+        white-space: normal;
     }
-
 }
