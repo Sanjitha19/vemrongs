@@ -554,3 +554,28 @@ nav > a:hover,
         white-space: normal;
     }
 }
+/* =====================================================
+   MOBILE CONTACT MODAL FIX
+   ===================================================== */
+
+.consultation-modal {
+    position: fixed;
+    z-index: 9999;
+}
+
+@media (max-width: 768px) {
+
+    header {
+        position: relative;
+        z-index: 1000;
+    }
+
+    header nav.mobile-menu-open {
+        z-index: 1001;
+    }
+
+    .consultation-modal {
+        z-index: 99999;
+    }
+
+}
