@@ -131,12 +131,7 @@
 
 
             <a href="#"
-               onclick="closeMobileMenu(); 
-                document.querySelector('header nav').classList.remove('mobile-menu-open');
-       document.querySelectorAll('header nav .dropdown').forEach(function(d) {
-           d.classList.remove('mobile-dropdown-open');
-       });
-                openConsultation(); return false;">
+               onclick="closeMobileMenu(); openConsultation(); return false;">
                 Contact
             </a>
 
@@ -1909,7 +1904,233 @@
 
             }
         );
+<script>
 
+/* =====================================================
+   MOBILE MENU
+   ===================================================== */
+
+function toggleMobileMenu() {
+
+    const nav =
+        document.querySelector("header nav");
+
+    const button =
+        document.querySelector(".menu-toggle");
+
+    if (!nav) return;
+
+    nav.classList.toggle("mobile-menu-open");
+
+    if (button) {
+        button.textContent =
+            nav.classList.contains("mobile-menu-open")
+                ? "✕"
+                : "☰";
+    }
+}
+
+
+/* =====================================================
+   CLOSE MOBILE MENU
+   ===================================================== */
+
+function closeMobileMenu() {
+
+    const nav =
+        document.querySelector("header nav");
+
+    const button =
+        document.querySelector(".menu-toggle");
+
+    if (!nav) return;
+
+    nav.classList.remove("mobile-menu-open");
+
+    document.querySelectorAll(
+        "header nav .dropdown"
+    ).forEach(function(dropdown) {
+
+        dropdown.classList.remove(
+            "mobile-dropdown-open"
+        );
+
+    });
+
+    if (button) {
+        button.textContent = "☰";
+    }
+}
+
+
+/* =====================================================
+   MOBILE DROPDOWNS
+   ONE OPEN AT A TIME
+   ===================================================== */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function() {
+
+        const dropdowns =
+            document.querySelectorAll(
+                "header nav .dropdown"
+            );
+
+
+        dropdowns.forEach(
+            function(dropdown) {
+
+                const link =
+                    dropdown.querySelector(":scope > a");
+
+                if (!link) return;
+
+
+                link.addEventListener(
+                    "click",
+                    function(event) {
+
+                        if (window.innerWidth <= 768) {
+
+                            event.preventDefault();
+
+
+                            dropdowns.forEach(
+                                function(otherDropdown) {
+
+                                    if (
+                                        otherDropdown !==
+                                        dropdown
+                                    ) {
+
+                                        otherDropdown.classList.remove(
+                                            "mobile-dropdown-open"
+                                        );
+
+                                    }
+
+                                }
+                            );
+
+
+                            dropdown.classList.toggle(
+                                "mobile-dropdown-open"
+                            );
+
+                        }
+
+                    }
+                );
+
+            }
+        );
+
+
+        /* CLOSE AFTER NORMAL NAVIGATION */
+
+        document.querySelectorAll(
+            "header nav > a"
+        ).forEach(
+            function(link) {
+
+                link.addEventListener(
+                    "click",
+                    function() {
+
+                        if (window.innerWidth <= 768) {
+                            closeMobileMenu();
+                        }
+
+                    }
+                );
+
+            }
+        );
+
+
+        /* CLOSE AFTER SUBMENU CLICK */
+
+        document.querySelectorAll(
+            "header nav .dropdown-menu a"
+        ).forEach(
+            function(link) {
+
+                link.addEventListener(
+                    "click",
+                    function() {
+
+                        if (window.innerWidth <= 768) {
+                            closeMobileMenu();
+                        }
+
+                    }
+                );
+
+            }
+        );
+
+
+        /* CLOSE WHEN CLICKING OUTSIDE */
+
+        document.addEventListener(
+            "click",
+            function(event) {
+
+                if (window.innerWidth > 768) {
+                    return;
+                }
+
+
+                const nav =
+                    document.querySelector(
+                        "header nav"
+                    );
+
+                const button =
+                    document.querySelector(
+                        ".menu-toggle"
+                    );
+
+
+                if (!nav || !button) {
+                    return;
+                }
+
+
+                if (
+                    nav.classList.contains(
+                        "mobile-menu-open"
+                    ) &&
+                    !nav.contains(event.target) &&
+                    !button.contains(event.target)
+                ) {
+
+                    closeMobileMenu();
+
+                }
+
+            }
+        );
+
+
+        /* ESC */
+
+        document.addEventListener(
+            "keydown",
+            function(event) {
+
+                if (event.key === "Escape") {
+                    closeMobileMenu();
+                }
+
+            }
+        );
+
+    }
+);
+
+</script>
     </script>
 
 
