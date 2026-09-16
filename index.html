@@ -131,7 +131,12 @@
 
 
             <a href="#"
-               onclick="closeMobileMenu(); openConsultation(); return false;">
+               onclick="closeMobileMenu(); 
+                document.querySelector('header nav').classList.remove('mobile-menu-open');
+       document.querySelectorAll('header nav .dropdown').forEach(function(d) {
+           d.classList.remove('mobile-dropdown-open');
+       });
+                openConsultation(); return false;">
                 Contact
             </a>
 
