@@ -566,14 +566,6 @@ nav > a:hover,
 
 @media (max-width: 768px) {
 
-    header nav.mobile-menu-open {
-        display: none !important;
-    }
-
-    header nav.mobile-menu-open .dropdown-menu {
-        display: none !important;
-    }
-
     .consultation-modal {
         position: fixed !important;
         top: 0 !important;
