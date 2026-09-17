@@ -1041,41 +1041,10 @@
 
 
         /* =========================
-           HIDE ALL PAGES
-           ========================= */
-
-        function hideAllPages() {
-            const pageIds = [
-                "homePage",
-                "calculatorPage",
-                "subsidyPage",
-                "homesPage",
-                "commercialPage",
-                "industrialPage",
-                "agriculturePage",
-                "onGridPage",
-                "offGridPage",
-                "hybridPage"
-            ];
-
-            pageIds.forEach(function(id) {
-                const page = document.getElementById(id);
-                if (page) {
-                    page.style.display = "none";
-                }
-            });
-
-            document.body.classList.remove("subsidy-open");
-        }
-
-
-        /* =========================
            OPEN CALCULATOR
            ========================= */
 
         function openCalculator() {
-
-            hideAllPages();
 
             document.getElementById(
                 "homePage"
@@ -1121,8 +1090,6 @@
            ========================= */
 
         function openSubsidy() {
-
-            hideAllPages();
 
             document.getElementById(
                 "homePage"
@@ -1273,8 +1240,6 @@
 
         function openHomes() {
 
-            hideAllPages();
-
             document.getElementById("homePage")
                 .style.display = "none";
 
@@ -1300,8 +1265,6 @@
            ========================= */
 
         function openCommercial() {
-
-            hideAllPages();
 
             document.getElementById("homePage")
                 .style.display = "none";
@@ -1331,8 +1294,6 @@
            ========================= */
 
         function openIndustrial() {
-
-            hideAllPages();
 
             document.getElementById("homePage")
                 .style.display = "none";
@@ -1365,8 +1326,6 @@
            ========================= */
 
         function openAgriculture() {
-
-            hideAllPages();
 
             document.getElementById("homePage")
                 .style.display = "none";
@@ -1402,8 +1361,6 @@
            ========================= */
 
         function openOnGrid() {
-
-            hideAllPages();
 
             document.getElementById("homePage")
                 .style.display = "none";
@@ -1449,8 +1406,6 @@
 
         function openOffGrid() {
 
-            hideAllPages();
-
             document.getElementById("homePage")
                 .style.display = "none";
 
@@ -1495,8 +1450,6 @@
 
         function openHybrid() {
 
-            hideAllPages();
-
             document.getElementById("homePage")
                 .style.display = "none";
 
@@ -1540,8 +1493,6 @@
            ========================= */
 
         function openHome() {
-
-            hideAllPages();
 
             document.getElementById("calculatorPage")
                 .style.display = "none";
