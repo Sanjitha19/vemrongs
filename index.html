@@ -2341,173 +2341,158 @@
 
         function submitConsultation() {
 
-            const name =
-                document.getElementById(
-                    "name"
-                ).value.trim();
+    const name =
+        document.getElementById("name").value.trim();
+
+    const email =
+        document.getElementById("email").value.trim();
+
+    const phone =
+        document.getElementById("phone").value.trim();
+
+    const pincode =
+        document.getElementById("pincode").value.trim();
+
+    const bill =
+        document.getElementById("bill").value.trim();
 
 
-            const email =
-                document.getElementById(
-                    "email"
-                ).value.trim();
+    if (
+        !name ||
+        !email ||
+        !phone ||
+        !pincode ||
+        !bill
+    ) {
+
+        alert(
+            "Please fill in all the details."
+        );
+
+        return;
+
+    }
 
 
-            const phone =
-                document.getElementById(
-                    "phone"
-                ).value.trim();
+    if (
+        document.getElementById("phone").disabled !== true
+    ) {
+
+        alert(
+            "Please verify your phone number with OTP first."
+        );
+
+        return;
+
+    }
 
 
-            const pincode =
-                document.getElementById(
-                    "pincode"
-                ).value.trim();
+    const templateParams = {
+
+        name: name,
+        email: email,
+        phone: phone,
+        pincode: pincode,
+        bill: bill
+
+    };
 
 
-            const bill =
-                document.getElementById(
-                    "bill"
-                ).value.trim();
+    console.log(
+        "STEP 1: Sending customer email..."
+    );
 
 
-            if (
-                !name ||
-                !email ||
-                !phone ||
-                !pincode ||
-                !bill
-            ) {
+    emailjs.send(
+        "service_oonozha",
+        "template_0b16cta",
+        templateParams
+    )
 
-                alert(
-                    "Please fill in all the details."
-                );
+    .then(function(response) {
 
-                return;
-
-            }
+        console.log(
+            "STEP 2: Customer email sent:",
+            response
+        );
 
 
-            if (
-                document.getElementById(
-                    "phone"
-                ).disabled !== true
-            ) {
-
-                alert(
-                    "Please verify your phone number with OTP first."
-                );
-
-                return;
-
-            }
+        console.log(
+            "STEP 3: Sending business email..."
+        );
 
 
-            const templateParams = {
+        return emailjs.send(
+            "service_oonozha",
+            "template_gp51hw6",
+            templateParams
+        );
 
-                name: name,
+    })
 
-                email: email,
+    .then(function(response) {
 
-                phone: phone,
-
-                pincode: pincode,
-
-                bill: bill
-
-            };
-
-
-            console.log(
-                "STEP 1: Sending customer email..."
-            );
+        console.log(
+            "STEP 4: Business email sent:",
+            response
+        );
 
 
-            emailjs.send(
-
-                "service_oonozha",
-
-                "template_0b16cta",
-
-                templateParams
-
-            )
-
-            .then(
-                function (response) {
-
-                    console.log(
-                        "STEP 2: Customer email sent:",
-                        response
-                    );
+        // Clear all form fields
+        document.getElementById("name").value = "";
+        document.getElementById("email").value = "";
+        document.getElementById("phone").value = "";
+        document.getElementById("otp").value = "";
+        document.getElementById("pincode").value = "";
+        document.getElementById("bill").value = "";
 
 
-                    console.log(
-                        "STEP 3: Sending business email..."
-                    );
+        // Reset OTP section
+        document.getElementById("otpSection").style.display = "none";
+        document.getElementById("otpMessage").textContent = "";
 
 
-                    return emailjs.send(
-
-                        "service_oonozha",
-
-                        "template_gp51hw6",
-
-                        templateParams
-
-                    );
-
-                }
-            )
-
-            .then(
-                function (response) {
-
-                    console.log(
-                        "STEP 4: Business email sent:",
-                        response
-                    );
+        // Reset phone/OTP controls
+        document.getElementById("phone").disabled = false;
+        document.getElementById("getOtpBtn").disabled = false;
+        document.getElementById("otp").disabled = false;
+        document.getElementById("verifyOtpBtn").disabled = false;
 
 
-                    alert(
-                        "Thank you! Your consultation request has been submitted successfully."
-                    );
+        alert(
+            "Thank you! Your consultation request has been submitted successfully."
+        );
 
 
-                    closeConsultation();
+        closeConsultation();
 
-                }
-            )
+    })
 
-            .catch(
-                function (error) {
+    .catch(function(error) {
 
-                    console.error(
-                        "EMAIL ERROR:",
-                        error
-                    );
+        console.error(
+            "EMAIL ERROR:",
+            error
+        );
 
+        console.error(
+            "ERROR STATUS:",
+            error.status
+        );
 
-                    console.error(
-                        "ERROR STATUS:",
-                        error.status
-                    );
-
-
-                    console.error(
-                        "ERROR TEXT:",
-                        error.text
-                    );
+        console.error(
+            "ERROR TEXT:",
+            error.text
+        );
 
 
-                    alert(
-                        "Email sending failed. Please check the console."
-                    );
+        alert(
+            "Email sending failed. Please check the console."
+        );
 
-                }
-            );
+    });
 
-        }
+}
 
 
     </script>
